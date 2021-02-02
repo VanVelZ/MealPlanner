@@ -12,6 +12,16 @@ struct PersistenceController {
     
     let container: NSPersistentContainer
     
+    static func saveContext(){
+        do{
+            try PersistenceController.shared.container.viewContext.save()
+        }
+        catch {
+            let error = error as NSError
+            fatalError("Unresolved Error: \(error)")
+        }
+    }
+    
     init(){
         container = NSPersistentContainer(name: "MealPlanner")
         
