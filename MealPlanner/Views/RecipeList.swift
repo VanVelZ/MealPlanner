@@ -17,7 +17,8 @@ struct RecipeList: View {
             List {
                 ForEach(recipes){ recipe in
                     RecipeItem(recipe: recipe)
-                }.onDelete { (index) in
+                }
+                .onDelete { (index) in
                     deleteRecipe(offsets: index)
                 }
             }
@@ -31,23 +32,14 @@ struct RecipeList: View {
     private func deleteRecipe(offsets: IndexSet){
         withAnimation{
             offsets.map{recipes[$0]}.forEach(viewContext.delete)
-            saveContext()
-        }
-    }
-    private func saveContext(){
-        do{
-            try viewContext.save()
-        }
-        catch {
-            let error = error as NSError
-            fatalError("Unresolved Error: \(error)")
+            PersistenceController.saveContext()
         }
     }
     private func addRecipe(){
         withAnimation{
             let newRecipe = Recipe(context: viewContext)
             newRecipe.name = "New Recipe"
-            saveContext()
+            PersistenceController.saveContext()
         }
     }
 }
