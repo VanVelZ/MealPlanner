@@ -32,8 +32,7 @@ struct EditIngredientForm: View{
                     })
                 }
                 else {
-                    TextField("Ingredient amount", value: $ingredient.amount, formatter: NumberFormatter())
-                        .keyboardType(.numberPad)
+                    DecimalField("#", value: $ingredient.optionalAmount, formatter: NumberFormatter())
                         .frame(maxWidth: 40)
                     Picker(selection: $ingredient.unit, label: Text(ingredient.unit ?? "Unit")){
                         ForEach(0..<units.count){

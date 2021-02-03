@@ -16,4 +16,12 @@ extension Ingredient{
             name = newValue
         }
     }
+    var optionalAmount: Double? {
+        get {
+            amount
+        }
+        set {
+            amount = newValue ?? 0.0
+        }
+    }
 }

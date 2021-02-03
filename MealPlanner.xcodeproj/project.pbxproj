@@ -20,6 +20,7 @@
 		37B2726625CA1237003405A3 /* RecipeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2726525CA1237003405A3 /* RecipeItem.swift */; };
 		37B2726925CA12F2003405A3 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2726825CA12F2003405A3 /* Recipe.swift */; };
 		37B2726C25CA12FD003405A3 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2726B25CA12FD003405A3 /* Ingredient.swift */; };
+		37C39F3F25CB1ECA0033A1ED /* DecimalField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39F3E25CB1ECA0033A1ED /* DecimalField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		37B2726525CA1237003405A3 /* RecipeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItem.swift; sourceTree = "<group>"; };
 		37B2726825CA12F2003405A3 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		37B2726B25CA12FD003405A3 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		37C39F3E25CB1ECA0033A1ED /* DecimalField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				37B2725925CA106F003405A3 /* RecipeList.swift */,
 				37B2726225CA11B2003405A3 /* EditIngredientForm.swift */,
 				37B2726525CA1237003405A3 /* RecipeItem.swift */,
+				37C39F3E25CB1ECA0033A1ED /* DecimalField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				37B2725A25CA106F003405A3 /* RecipeList.swift in Sources */,
 				3739C3A925C8535F00B258F8 /* ContentView.swift in Sources */,
 				37B2726925CA12F2003405A3 /* Recipe.swift in Sources */,
+				37C39F3F25CB1ECA0033A1ED /* DecimalField.swift in Sources */,
 				370161F925CB0E27002FF3DA /* UnitType.swift in Sources */,
 				3739C3A725C8535F00B258F8 /* MealPlannerApp.swift in Sources */,
 				37B2725D25CA10D5003405A3 /* EditRecipeForm.swift in Sources */,
