@@ -11,10 +11,11 @@ struct EditIngredientForm: View{
     @ObservedObject var ingredient: Ingredient
     @State private var isAdding = true
     @EnvironmentObject private var recipe: Recipe
-    private var units: [String] = ["cup", "tbl", "tsp", "ml", "g"]
+    private var units: [String] = ["cup", "tbl", "tsp", "ml", "g", "lb"]
     
     init(ingredient: Ingredient){
         self.ingredient = ingredient
+        print(ingredient.unit ?? "no unit set")
     }
     
     
@@ -34,14 +35,15 @@ struct EditIngredientForm: View{
                 else {
                     DecimalField("#", value: $ingredient.optionalAmount, formatter: NumberFormatter())
                         .frame(maxWidth: 40)
-                    Picker(selection: $ingredient.unit, label: Text(ingredient.unit ?? "Unit")){
-                        ForEach(0..<units.count){
-                            Text(units[$0])
+                    Picker("\(ingredient.unit ?? "unit")", selection: $ingredient.unit){
+                        ForEach(units, id: \.self){ unit in
+                            Text(unit).tag(unit)
                         }
                     }.pickerStyle(MenuPickerStyle()).padding(.trailing)
-                    
                     TextField("Ingredient name", text: $ingredient.unwrappedName)
                 }
+            }.onDisappear{
+                PersistenceController.saveContext()
             }
     }
 }

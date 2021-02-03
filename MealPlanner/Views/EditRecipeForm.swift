@@ -36,6 +36,7 @@ struct EditRecipeForm: View{
                     if recipe.name == "" {
                         recipe.name = "New Recipe"
                     }
+                    PersistenceController.saveContext()
                 }
             }
             Section(header: Text("Ingredients").font(.subheadline)){
