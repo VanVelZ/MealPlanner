@@ -12,15 +12,19 @@ struct RecipeItem: View {
     @State private var addingRecipe: Bool = false
     @Environment(\.managedObjectContext) private var viewContext
     var body: some View{
-        Text(recipe.name ?? "Untitled")
-            .onTapGesture {
-                addingRecipe = true
+        HStack {
+            Text(recipe.name ?? "Untitled")
+                .onTapGesture {
+                    addingRecipe = true
+                }
+                .sheet(isPresented: $addingRecipe, content: {
+                    EditRecipeForm(recipe: recipe)
+                }).onDisappear{
+                    saveContext()
             }
-            .sheet(isPresented: $addingRecipe, content: {
-                EditRecipeForm(recipe: recipe)
-            }).onDisappear{
-                saveContext()
-            }
+            Spacer()
+            Image(systemName: "calendar.badge.plus")
+        }
     }
     private func saveContext(){
         do{
