@@ -26,8 +26,17 @@ struct EditRecipeForm: View{
     var body: some View{
         NavigationView{
         Form{
-            Section(header: Text("New Recipe").font(.subheadline)){
-                TextField("Recipe Name", text: $recipe.unwrappedName)
+            Section{
+                TextField("Recipe Name", text: $recipe.unwrappedName).onAppear{
+                    if recipe.name == "New Recipe"{
+                        recipe.name = ""
+                    }
+                }
+                .onDisappear{
+                    if recipe.name == "" {
+                        recipe.name = "New Recipe"
+                    }
+                }
             }
             Section(header: Text("Ingredients").font(.subheadline)){
                 List{

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370161F925CB0E27002FF3DA /* UnitType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370161F825CB0E27002FF3DA /* UnitType.swift */; };
 		3739C3A725C8535F00B258F8 /* MealPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3739C3A625C8535F00B258F8 /* MealPlannerApp.swift */; };
 		3739C3A925C8535F00B258F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3739C3A825C8535F00B258F8 /* ContentView.swift */; };
 		3739C3AB25C8536000B258F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3739C3AA25C8536000B258F8 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370161F825CB0E27002FF3DA /* UnitType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitType.swift; sourceTree = "<group>"; };
 		3739C3A325C8535F00B258F8 /* MealPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3739C3A625C8535F00B258F8 /* MealPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerApp.swift; sourceTree = "<group>"; };
 		3739C3A825C8535F00B258F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				3739C3BA25C8544400B258F8 /* Persistence.swift */,
 				37B2726825CA12F2003405A3 /* Recipe.swift */,
 				37B2726B25CA12FD003405A3 /* Ingredient.swift */,
+				370161F825CB0E27002FF3DA /* UnitType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				37B2725A25CA106F003405A3 /* RecipeList.swift in Sources */,
 				3739C3A925C8535F00B258F8 /* ContentView.swift in Sources */,
 				37B2726925CA12F2003405A3 /* Recipe.swift in Sources */,
+				370161F925CB0E27002FF3DA /* UnitType.swift in Sources */,
 				3739C3A725C8535F00B258F8 /* MealPlannerApp.swift in Sources */,
 				37B2725D25CA10D5003405A3 /* EditRecipeForm.swift in Sources */,
 			);

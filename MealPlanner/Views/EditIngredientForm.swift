@@ -32,14 +32,16 @@ struct EditIngredientForm: View{
                     })
                 }
                 else {
-                    TextField("ingredient amount", value: $ingredient.amount, formatter: NumberFormatter())
+                    TextField("Ingredient amount", value: $ingredient.amount, formatter: NumberFormatter())
                         .keyboardType(.numberPad)
+                        .frame(maxWidth: 40)
                     Picker(selection: $ingredient.unit, label: Text(ingredient.unit ?? "Unit")){
                         ForEach(0..<units.count){
                             Text(units[$0])
                         }
-                    }
-                    TextField("ingredient name", text: $ingredient.unwrappedName)
+                    }.pickerStyle(MenuPickerStyle()).padding(.trailing)
+                    
+                    TextField("Ingredient name", text: $ingredient.unwrappedName)
                 }
             }
     }
