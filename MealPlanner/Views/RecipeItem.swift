@@ -24,11 +24,6 @@ struct RecipeItem: View {
                 .sheet(isPresented: $addingRecipe, content: {
                     EditRecipeForm(recipe: recipe)
                 })
-            Spacer()
-            Image(systemName: addRecipeToMealImage)
-                .popover(isPresented: $addingToMeal, content: {
-                    
-                })
         }.onDisappear{
             PersistenceController.saveContext()
         }

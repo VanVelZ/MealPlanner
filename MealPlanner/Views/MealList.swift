@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MealList: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: []) private var meals: FetchedResults<Meal>
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Meal.plannedForDate, ascending: true)]) private var meals: FetchedResults<Meal>
     
     var body: some View {
             List {

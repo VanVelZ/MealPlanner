@@ -24,6 +24,15 @@ extension Meal{
             plannedForDate = newValue
         }
     }
+    var safeRecipes: [Recipe] {
+        get{
+        var recipeArray: [Recipe] = []
+        for recipe in recipes! {
+            recipeArray.append(recipe as! Recipe)
+        }
+        return recipeArray
+    }
+    }
     var dayOfTheWeek: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
