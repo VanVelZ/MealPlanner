@@ -26,6 +26,7 @@
 		37C39F4825CB5E8D0033A1ED /* UnitPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39F4725CB5E8D0033A1ED /* UnitPicker.swift */; };
 		37C39F4B25CC4C1B0033A1ED /* MealList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39F4A25CC4C1B0033A1ED /* MealList.swift */; };
 		37C39F4E25CC4D840033A1ED /* MealItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39F4D25CC4D840033A1ED /* MealItem.swift */; };
+		37C39F6E25CC64EC0033A1ED /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39F6D25CC64EC0033A1ED /* Meal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		37C39F4725CB5E8D0033A1ED /* UnitPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPicker.swift; sourceTree = "<group>"; };
 		37C39F4A25CC4C1B0033A1ED /* MealList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealList.swift; sourceTree = "<group>"; };
 		37C39F4D25CC4D840033A1ED /* MealItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealItem.swift; sourceTree = "<group>"; };
+		37C39F6D25CC64EC0033A1ED /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				37B2726825CA12F2003405A3 /* Recipe.swift */,
 				37B2726B25CA12FD003405A3 /* Ingredient.swift */,
 				370161F825CB0E27002FF3DA /* UnitType.swift */,
+				37C39F6D25CC64EC0033A1ED /* Meal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				3739C3B825C8538200B258F8 /* MealPlanner.xcdatamodeld in Sources */,
 				3739C3BB25C8544400B258F8 /* Persistence.swift in Sources */,
 				37C39F4B25CC4C1B0033A1ED /* MealList.swift in Sources */,
+				37C39F6E25CC64EC0033A1ED /* Meal.swift in Sources */,
 				37B2726C25CA12FD003405A3 /* Ingredient.swift in Sources */,
 				37B2726625CA1237003405A3 /* RecipeItem.swift in Sources */,
 				37B2726325CA11B2003405A3 /* EditIngredientForm.swift in Sources */,

@@ -9,14 +9,18 @@ import SwiftUI
 
 struct MealForm: View {
     
+    @ObservedObject var meal: Meal
     
     var body: some View {
-        Text("Do some things")
+        Form{
+        TextField("name", text: $meal.unwrappedName)
+            DatePicker("date", selection: $meal.unwrappedDate, in: Date()...).datePickerStyle(GraphicalDatePickerStyle())
+        }
     }
 }
 
 struct MealForm_Previews: PreviewProvider {
     static var previews: some View {
-        MealForm()
+        MealForm(meal: Meal(context: PersistenceController.shared.container.viewContext))
     }
 }

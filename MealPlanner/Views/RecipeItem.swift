@@ -27,7 +27,7 @@ struct RecipeItem: View {
             Spacer()
             Image(systemName: addRecipeToMealImage)
                 .popover(isPresented: $addingToMeal, content: {
-                    MealForm()
+                    
                 })
         }.onDisappear{
             PersistenceController.saveContext()
