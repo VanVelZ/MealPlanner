@@ -8,33 +8,34 @@
 import SwiftUI
 
 struct RecipeItem: View {
+    
     @ObservedObject var recipe: Recipe
     @State private var addingRecipe: Bool = false
     @Environment(\.managedObjectContext) private var viewContext
+    @State private var addingToMeal: Bool = false
+    
+    
     var body: some View{
         HStack {
-            Text(recipe.name ?? "Untitled")
+            Text(recipe.name ?? defaultRecipeName)
                 .onTapGesture {
                     addingRecipe = true
                 }
                 .sheet(isPresented: $addingRecipe, content: {
                     EditRecipeForm(recipe: recipe)
                 }).onDisappear{
-                    saveContext()
-            }
+                    PersistenceController.saveContext()
+                }
             Spacer()
-            Image(systemName: "calendar.badge.plus")
+            Image(systemName: addRecipeToMealImage)
+                .popover(isPresented: $addingToMeal, content: {
+                    MealForm()
+                })
         }
     }
-    private func saveContext(){
-        do{
-            try viewContext.save()
-        }
-        catch {
-            let error = error as NSError
-            fatalError("Unresolved Error: \(error)")
-        }
-    }
+    
+    private let addRecipeToMealImage = "calendar.badge.plus"
+    private let defaultRecipeName = "Untitled Recipe"
 }
 struct RecipeItem_Previews: PreviewProvider {
     static var previews: some View {

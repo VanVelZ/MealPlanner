@@ -21,6 +21,9 @@
 		37B2726925CA12F2003405A3 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2726825CA12F2003405A3 /* Recipe.swift */; };
 		37B2726C25CA12FD003405A3 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2726B25CA12FD003405A3 /* Ingredient.swift */; };
 		37C39F3F25CB1ECA0033A1ED /* DecimalField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39F3E25CB1ECA0033A1ED /* DecimalField.swift */; };
+		37C39F4225CB317C0033A1ED /* MealForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39F4125CB317C0033A1ED /* MealForm.swift */; };
+		37C39F4525CB5AF70033A1ED /* MealPlanStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37C39F4425CB5AF70033A1ED /* MealPlanStrings.strings */; };
+		37C39F4825CB5E8D0033A1ED /* UnitPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39F4725CB5E8D0033A1ED /* UnitPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		37B2726825CA12F2003405A3 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		37B2726B25CA12FD003405A3 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		37C39F3E25CB1ECA0033A1ED /* DecimalField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalField.swift; sourceTree = "<group>"; };
+		37C39F4125CB317C0033A1ED /* MealForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealForm.swift; sourceTree = "<group>"; };
+		37C39F4425CB5AF70033A1ED /* MealPlanStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MealPlanStrings.strings; sourceTree = "<group>"; };
+		37C39F4725CB5E8D0033A1ED /* UnitPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 				3739C3AF25C8536000B258F8 /* Info.plist */,
 				3739C3B625C8538200B258F8 /* MealPlanner.xcdatamodeld */,
 				3739C3A625C8535F00B258F8 /* MealPlannerApp.swift */,
+				37C39F4425CB5AF70033A1ED /* MealPlanStrings.strings */,
 			);
 			path = MealPlanner;
 			sourceTree = "<group>";
@@ -111,6 +118,8 @@
 				37B2726225CA11B2003405A3 /* EditIngredientForm.swift */,
 				37B2726525CA1237003405A3 /* RecipeItem.swift */,
 				37C39F3E25CB1ECA0033A1ED /* DecimalField.swift */,
+				37C39F4125CB317C0033A1ED /* MealForm.swift */,
+				37C39F4725CB5E8D0033A1ED /* UnitPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3739C3AE25C8536000B258F8 /* Preview Assets.xcassets in Resources */,
+				37C39F4525CB5AF70033A1ED /* MealPlanStrings.strings in Resources */,
 				3739C3AB25C8536000B258F8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,7 +201,9 @@
 				37B2726325CA11B2003405A3 /* EditIngredientForm.swift in Sources */,
 				37B2725A25CA106F003405A3 /* RecipeList.swift in Sources */,
 				3739C3A925C8535F00B258F8 /* ContentView.swift in Sources */,
+				37C39F4825CB5E8D0033A1ED /* UnitPicker.swift in Sources */,
 				37B2726925CA12F2003405A3 /* Recipe.swift in Sources */,
+				37C39F4225CB317C0033A1ED /* MealForm.swift in Sources */,
 				37C39F3F25CB1ECA0033A1ED /* DecimalField.swift in Sources */,
 				370161F925CB0E27002FF3DA /* UnitType.swift in Sources */,
 				3739C3A725C8535F00B258F8 /* MealPlannerApp.swift in Sources */,

@@ -16,6 +16,14 @@ extension Ingredient{
             name = newValue
         }
     }
+    var unwrappedUnit: String {
+        get{
+            self.unit ?? ""
+        }
+        set {
+            unit = newValue
+        }
+    }
     var optionalAmount: Double? {
         get {
             amount

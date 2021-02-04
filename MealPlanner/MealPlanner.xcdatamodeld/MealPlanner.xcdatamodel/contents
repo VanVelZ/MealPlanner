@@ -8,11 +8,7 @@
     </entity>
     <entity name="Meal" representedClassName="Meal" syncable="YES" codeGenerationType="class">
         <attribute name="plannedForDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="inPlans" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MealPlan" inverseName="meals" inverseEntity="MealPlan"/>
         <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="inMeals" inverseEntity="Recipe"/>
-    </entity>
-    <entity name="MealPlan" representedClassName="MealPlan" syncable="YES" codeGenerationType="class">
-        <relationship name="meals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Meal" inverseName="inPlans" inverseEntity="Meal"/>
     </entity>
     <entity name="Recipe" representedClassName="Recipe" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -21,8 +17,7 @@
     </entity>
     <elements>
         <element name="Ingredient" positionX="-57.3818359375" positionY="-34.58740234375" width="128" height="89"/>
-        <element name="Meal" positionX="-349.2412719726562" positionY="185.2578735351562" width="128" height="88"/>
-        <element name="MealPlan" positionX="-99.28839111328125" positionY="296.9217529296875" width="128" height="58"/>
+        <element name="Meal" positionX="-349.2412719726562" positionY="185.2578735351562" width="128" height="59"/>
         <element name="Recipe" positionX="-433.2013549804688" positionY="12.71228027343751" width="128" height="88"/>
     </elements>
 </model>
