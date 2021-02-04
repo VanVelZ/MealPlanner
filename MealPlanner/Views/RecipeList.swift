@@ -21,6 +21,8 @@ struct RecipeList: View {
                 .onDelete { (index) in
                     deleteRecipe(offsets: index)
                 }
+            }.onDisappear{
+                PersistenceController.saveContext()
             }
             .navigationTitle("Recipes")
             .navigationBarItems(trailing: Button(action: {
@@ -32,14 +34,12 @@ struct RecipeList: View {
     private func deleteRecipe(offsets: IndexSet){
         withAnimation{
             offsets.map{recipes[$0]}.forEach(viewContext.delete)
-            PersistenceController.saveContext()
         }
     }
     private func addRecipe(){
         withAnimation{
             let newRecipe = Recipe(context: viewContext)
             newRecipe.name = "New Recipe"
-            PersistenceController.saveContext()
         }
     }
 }

@@ -13,11 +13,15 @@ struct MealList: View {
     
     var body: some View {
             List {
+                NavigationLink("All Recipes", destination: RecipeList())
                 ForEach(meals){ meal in
                     MealItem(meal: meal)
                 }
                 .onDelete { (index) in
                     deleteMeal(offsets: index)
+                }
+                .onDisappear{
+                    PersistenceController.saveContext()
                 }
             }
             .navigationTitle("Meals")
@@ -30,7 +34,6 @@ struct MealList: View {
     private func deleteMeal(offsets: IndexSet){
         withAnimation{
             offsets.map{meals[$0]}.forEach(viewContext.delete)
-            PersistenceController.saveContext()
         }
     }
     private func addMeal(){
@@ -38,7 +41,6 @@ struct MealList: View {
             let newMeal = Meal(context: viewContext)
             newMeal.name = "New Meal"
             newMeal.plannedForDate = Date()
-            PersistenceController.saveContext()
         }
     }
 }

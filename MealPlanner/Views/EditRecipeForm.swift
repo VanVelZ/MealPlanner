@@ -20,7 +20,6 @@ struct EditRecipeForm: View{
     private func deleteIngredient(ingredient: Ingredient){
         withAnimation{
             recipe.removeFromIngredients(ingredient)
-            PersistenceController.saveContext()
         }
     }
     var body: some View{

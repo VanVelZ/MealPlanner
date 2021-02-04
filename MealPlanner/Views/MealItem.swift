@@ -9,14 +9,10 @@ import SwiftUI
 
 struct MealItem: View {
     @ObservedObject var meal: Meal
-    @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
         HStack {
             Text(meal.name ?? "Untitled")
-                .onDisappear{
-                    PersistenceController.saveContext()
-                }
         }
     }
 }
