@@ -33,7 +33,6 @@ struct EditIngredientForm: View{
                 }
                 else {
                     DecimalField("#", value: $ingredient.optionalAmount, formatter: NumberFormatter())
-                        .frame(maxWidth: 40)
                     TextField("unit", text: $ingredient.unwrappedUnit)
                     TextField(namePlaceHolder, text: $ingredient.unwrappedName)
                 }
