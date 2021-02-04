@@ -13,6 +13,7 @@ struct RecipeList: View {
     @FetchRequest(sortDescriptors: []) private var recipes: FetchedResults<Recipe>
     
     
+    
     var body: some View {
             List {
                 ForEach(recipes){ recipe in

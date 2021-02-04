@@ -10,18 +10,18 @@ import SwiftUI
 struct RecipeItem: View {
     
     @ObservedObject var recipe: Recipe
-    @State private var addingRecipe: Bool = false
+    @State private var editingRecipe: Bool = false
     @Environment(\.managedObjectContext) private var viewContext
-    @State private var addingToMeal: Bool = false
+    var addingToMeal: Bool = false
     
     
     var body: some View{
         HStack {
             Text(recipe.name ?? defaultRecipeName)
                 .onTapGesture {
-                    addingRecipe = true
+                    editingRecipe = true
                 }
-                .sheet(isPresented: $addingRecipe, content: {
+                .sheet(isPresented: $editingRecipe, content: {
                     EditRecipeForm(recipe: recipe)
                 })
         }.onDisappear{
