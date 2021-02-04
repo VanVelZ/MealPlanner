@@ -14,10 +14,10 @@ struct MealForm: View {
     
     var body: some View {
         Form{
-            Section(header: Text(meal.unwrappedName)){
-                HStack{
-            TextField("name", text: $meal.unwrappedName)
-            DatePicker("", selection: $meal.unwrappedDate, in: Date()...)
+            Section{
+                VStack {
+                    TextField("name", text: $meal.unwrappedName).textFieldStyle(RoundedBorderTextFieldStyle()).font(.title)
+                    DatePicker("", selection: $meal.unwrappedDate, in: Date()..., displayedComponents: .date).datePickerStyle(GraphicalDatePickerStyle())
                 }
         }
             Section {
@@ -41,8 +41,10 @@ struct MealForm: View {
                 }.onDisappear{
                     PersistenceController.saveContext()
                 }
+                
             }
         }
+        .navigationTitle("\(meal.unwrappedName) on \(meal.dayOfTheWeek)")
     }
     
     private func deleteRecipe(offsets: IndexSet){

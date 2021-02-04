@@ -28,7 +28,7 @@ struct RecipeList: View {
             .navigationBarItems(trailing: Button(action: {
                 addRecipe()
             }, label: {
-                Text("+").font(.largeTitle)
+                Text(newRecipeText)
             }))
     }
     private func deleteRecipe(offsets: IndexSet){
@@ -39,9 +39,10 @@ struct RecipeList: View {
     private func addRecipe(){
         withAnimation{
             let newRecipe = Recipe(context: viewContext)
-            newRecipe.name = "New Recipe"
+            newRecipe.name = newRecipeText
         }
     }
+    private var newRecipeText = "New Recipe"
 }
 
 struct RecipeList_Previews: PreviewProvider {

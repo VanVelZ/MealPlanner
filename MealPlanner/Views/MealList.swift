@@ -28,7 +28,7 @@ struct MealList: View {
             .navigationBarItems(trailing: Button(action: {
                 addMeal()
             }, label: {
-                Text("+").font(.largeTitle)
+                Text(newMealText)
             }))
     }
     private func deleteMeal(offsets: IndexSet){
@@ -39,10 +39,11 @@ struct MealList: View {
     private func addMeal(){
         withAnimation{
             let newMeal = Meal(context: viewContext)
-            newMeal.name = "New Meal"
+            newMeal.name = newMealText
             newMeal.plannedForDate = Date()
         }
     }
+    private var newMealText = "New Meal"
 }
 
 struct MealList_Previews: PreviewProvider {
