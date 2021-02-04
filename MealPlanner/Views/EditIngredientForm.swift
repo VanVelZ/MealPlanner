@@ -24,11 +24,7 @@ struct EditIngredientForm: View{
                     Button(action: {
                         ingredient.forRecipe = recipe
                     }, label: {
-                        HStack{
-                            Spacer()
-                            Text("+").font(.largeTitle).frame(alignment: .center)
-                            Spacer()
-                        }
+                        NewIngredientView()
                     })
                 }
                 else {
@@ -45,3 +41,13 @@ struct EditIngredientForm: View{
 
 
 
+
+struct NewIngredientView: View {
+    var body: some View {
+        HStack{
+            Spacer()
+            Text("+").font(.largeTitle).frame(alignment: .center)
+            Spacer()
+        }
+    }
+}

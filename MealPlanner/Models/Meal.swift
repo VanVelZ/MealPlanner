@@ -24,4 +24,11 @@ extension Meal{
             plannedForDate = newValue
         }
     }
+    var dayOfTheWeek: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+
+        return dateFormatter.string(from: unwrappedDate) // 12/15/16
+            
+    }
 }
