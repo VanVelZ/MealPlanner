@@ -16,7 +16,7 @@ struct MealForm: View {
         Form{
             Section{
                 VStack {
-                    TextField("name", text: $meal.unwrappedName).textFieldStyle(RoundedBorderTextFieldStyle()).font(.title)
+                    TextField("name", text: $meal.unwrappedName).textFieldStyle(RoundedBorderTextFieldStyle()).font(.title).padding()
                     DatePicker("", selection: $meal.unwrappedDate, in: Date()..., displayedComponents: .date).datePickerStyle(GraphicalDatePickerStyle())
                 }
         }
@@ -30,7 +30,6 @@ struct MealForm: View {
         }.onDisappear{
             PersistenceController.saveContext()
         }
-        .navigationTitle("\(meal.unwrappedName) on \(meal.dayOfTheWeek)")
     }
     struct AddRecipeToMeal: View{
         @ObservedObject var meal: Meal

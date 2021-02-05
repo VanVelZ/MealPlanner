@@ -11,8 +11,6 @@ struct MealList: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Meal.plannedForDate, ascending: true)]) private var meals: FetchedResults<Meal>
     
-    @AppStorage("mealNames", store: UserDefaults(suiteName: "group.com.prozach.MealPlanner"))
-    var mealNamesData: Data = Data()
     
     var body: some View {
             List {
@@ -25,6 +23,7 @@ struct MealList: View {
                 }
                 .onDisappear{
                     PersistenceController.saveContext()
+                    saveMealsForWidget()
                 }
                 .onAppear{ saveMealsForWidget()}
             }
@@ -38,9 +37,7 @@ struct MealList: View {
     private func saveMealsForWidget(){
         var mealNames: [String] = []
         meals.forEach{mealNames.append($0.unwrappedName)}
-        guard let namesData = try? JSONEncoder().encode(mealNames) else {return}
-        print(mealNames)
-        mealNamesData = namesData
+        UserDefaults.standard.set(mealNames, forKey: "mealNamesArray")
     }
     private func deleteMeal(offsets: IndexSet){
         withAnimation{

@@ -17,22 +17,18 @@ struct MealEntry: TimelineEntry{
 
 struct Provider: TimelineProvider{
     
-    @AppStorage("mealNames", store: UserDefaults(suiteName: "group.com.prozach.MealPlanner"))
-    var mealNamesData: Data = Data()
-    
     func placeholder(in context: Context) -> MealEntry {
         return MealEntry(date: Date(), meals: ["Breakfast", "Lunch", "Dinner"])
     }
     
     func getSnapshot(in context: Context, completion: @escaping (MealEntry) -> Void) {
-        guard let meals = try? JSONDecoder().decode([String].self, from: mealNamesData) else {return}
+        let meals = UserDefaults.standard.object(forKey: "mealNamesArray") as? [String] ?? [String]()
         let entry = MealEntry(date: Date(), meals: meals)
         completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<MealEntry>) -> Void) {
-        print("getting timeline")
-        guard let meals = try? JSONDecoder().decode([String].self, from: mealNamesData) else {return}
+        let meals = UserDefaults.standard.object(forKey: "mealNamesArray") as? [String] ?? [String]()
         let entry = MealEntry(date: Date(), meals: meals)
         let timeline = Timeline(entries: [entry], policy: .atEnd)
         completion(timeline)
@@ -44,7 +40,6 @@ struct WidgetEntryView: View{
     let entry: Provider.Entry
     
     var body: some View{
-        Text("Upcoming meals")
         ForEach(entry.meals, id: \.self){
             Text($0)
         }
