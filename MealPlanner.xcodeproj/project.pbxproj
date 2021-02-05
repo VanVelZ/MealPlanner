@@ -14,6 +14,24 @@
 		3739C3AE25C8536000B258F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3739C3AD25C8536000B258F8 /* Preview Assets.xcassets */; };
 		3739C3B825C8538200B258F8 /* MealPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3739C3B625C8538200B258F8 /* MealPlanner.xcdatamodeld */; };
 		3739C3BB25C8544400B258F8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3739C3BA25C8544400B258F8 /* Persistence.swift */; };
+		3782E11925CDEADC00E7EBBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3782E11825CDEADC00E7EBBA /* Assets.xcassets */; };
+		3782E12025CDEADC00E7EBBA /* MealPlannerAppleWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3782E11F25CDEADC00E7EBBA /* MealPlannerAppleWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3782E12525CDEADC00E7EBBA /* MealPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782E12425CDEADC00E7EBBA /* MealPlannerApp.swift */; };
+		3782E12925CDEADC00E7EBBA /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782E12825CDEADC00E7EBBA /* NotificationController.swift */; };
+		3782E12B25CDEADC00E7EBBA /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782E12A25CDEADC00E7EBBA /* NotificationView.swift */; };
+		3782E12D25CDEADC00E7EBBA /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782E12C25CDEADC00E7EBBA /* ComplicationController.swift */; };
+		3782E12F25CDEADD00E7EBBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3782E12E25CDEADD00E7EBBA /* Assets.xcassets */; };
+		3782E13225CDEADD00E7EBBA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3782E13125CDEADD00E7EBBA /* Preview Assets.xcassets */; };
+		3782E13725CDEADD00E7EBBA /* MealPlannerAppleWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3782E11625CDEADA00E7EBBA /* MealPlannerAppleWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3782E15625CDEC2E00E7EBBA /* MealPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3739C3B625C8538200B258F8 /* MealPlanner.xcdatamodeld */; };
+		3782E16025CDEC8B00E7EBBA /* MealPlanWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782E15F25CDEC8B00E7EBBA /* MealPlanWatchView.swift */; };
+		3782E16F25CDECC600E7EBBA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3739C3BA25C8544400B258F8 /* Persistence.swift */; };
+		3782E1A025CDED5E00E7EBBA /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2726825CA12F2003405A3 /* Recipe.swift */; };
+		3782E1A525CDED6300E7EBBA /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39F6D25CC64EC0033A1ED /* Meal.swift */; };
+		3782E1A625CDED6300E7EBBA /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2726B25CA12FD003405A3 /* Ingredient.swift */; };
+		3782E1A725CDED6300E7EBBA /* UnitType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370161F825CB0E27002FF3DA /* UnitType.swift */; };
+		3782E1AD25CDED7B00E7EBBA /* MealList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782E1AC25CDED7B00E7EBBA /* MealList.swift */; };
+		3782E1B325CDEEA000E7EBBA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3782E1B225CDEEA000E7EBBA /* CloudKit.framework */; };
 		37A7B57F25CD89F3006D956B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A7B57E25CD89F3006D956B /* WidgetKit.framework */; };
 		37A7B58125CD89F3006D956B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A7B58025CD89F3006D956B /* SwiftUI.framework */; };
 		37A7B58425CD89F3006D956B /* MealPlannerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A7B58325CD89F3006D956B /* MealPlannerWidget.swift */; };
@@ -39,6 +57,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3782E12125CDEADC00E7EBBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3739C39B25C8535F00B258F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3782E11E25CDEADC00E7EBBA;
+			remoteInfo = "MealPlannerAppleWatch Extension";
+		};
+		3782E13525CDEADD00E7EBBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3739C39B25C8535F00B258F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3782E11525CDEADA00E7EBBA;
+			remoteInfo = MealPlannerAppleWatch;
+		};
 		37A7B58B25CD89F4006D956B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3739C39B25C8535F00B258F8 /* Project object */;
@@ -49,6 +81,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		3782E13825CDEADD00E7EBBA /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				3782E13725CDEADD00E7EBBA /* MealPlannerAppleWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3782E13B25CDEADD00E7EBBA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3782E12025CDEADC00E7EBBA /* MealPlannerAppleWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		37A7B59125CD89F4006D956B /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -72,6 +126,21 @@
 		3739C3AF25C8536000B258F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3739C3B725C8538200B258F8 /* MealPlanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MealPlanner.xcdatamodel; sourceTree = "<group>"; };
 		3739C3BA25C8544400B258F8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		3782E11625CDEADA00E7EBBA /* MealPlannerAppleWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealPlannerAppleWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3782E11825CDEADC00E7EBBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3782E11A25CDEADC00E7EBBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3782E11F25CDEADC00E7EBBA /* MealPlannerAppleWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MealPlannerAppleWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3782E12425CDEADC00E7EBBA /* MealPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerApp.swift; sourceTree = "<group>"; };
+		3782E12825CDEADC00E7EBBA /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		3782E12A25CDEADC00E7EBBA /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		3782E12C25CDEADC00E7EBBA /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		3782E12E25CDEADD00E7EBBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3782E13125CDEADD00E7EBBA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3782E13325CDEADD00E7EBBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3782E13425CDEADD00E7EBBA /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		3782E15F25CDEC8B00E7EBBA /* MealPlanWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanWatchView.swift; sourceTree = "<group>"; };
+		3782E1AC25CDED7B00E7EBBA /* MealList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealList.swift; sourceTree = "<group>"; };
+		3782E1B225CDEEA000E7EBBA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		37A7B57625CD869A006D956B /* MealPlanner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MealPlanner.entitlements; sourceTree = "<group>"; };
 		37A7B57C25CD89F3006D956B /* MealPlannerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MealPlannerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A7B57E25CD89F3006D956B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -100,6 +169,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3782E1B325CDEEA000E7EBBA /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3782E11C25CDEADC00E7EBBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +197,8 @@
 			children = (
 				3739C3A525C8535F00B258F8 /* MealPlanner */,
 				37A7B58225CD89F3006D956B /* MealPlannerWidget */,
+				3782E11725CDEADA00E7EBBA /* MealPlannerAppleWatch */,
+				3782E12325CDEADC00E7EBBA /* MealPlannerAppleWatch Extension */,
 				37A7B57D25CD89F3006D956B /* Frameworks */,
 				3739C3A425C8535F00B258F8 /* Products */,
 			);
@@ -130,6 +209,8 @@
 			children = (
 				3739C3A325C8535F00B258F8 /* MealPlanner.app */,
 				37A7B57C25CD89F3006D956B /* MealPlannerWidgetExtension.appex */,
+				3782E11625CDEADA00E7EBBA /* MealPlannerAppleWatch.app */,
+				3782E11F25CDEADC00E7EBBA /* MealPlannerAppleWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,9 +239,44 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		3782E11725CDEADA00E7EBBA /* MealPlannerAppleWatch */ = {
+			isa = PBXGroup;
+			children = (
+				3782E11825CDEADC00E7EBBA /* Assets.xcassets */,
+				3782E11A25CDEADC00E7EBBA /* Info.plist */,
+			);
+			path = MealPlannerAppleWatch;
+			sourceTree = "<group>";
+		};
+		3782E12325CDEADC00E7EBBA /* MealPlannerAppleWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3782E12425CDEADC00E7EBBA /* MealPlannerApp.swift */,
+				3782E12825CDEADC00E7EBBA /* NotificationController.swift */,
+				3782E12A25CDEADC00E7EBBA /* NotificationView.swift */,
+				3782E12C25CDEADC00E7EBBA /* ComplicationController.swift */,
+				3782E12E25CDEADD00E7EBBA /* Assets.xcassets */,
+				3782E13325CDEADD00E7EBBA /* Info.plist */,
+				3782E13425CDEADD00E7EBBA /* PushNotificationPayload.apns */,
+				3782E13025CDEADD00E7EBBA /* Preview Content */,
+				3782E15F25CDEC8B00E7EBBA /* MealPlanWatchView.swift */,
+				3782E1AC25CDED7B00E7EBBA /* MealList.swift */,
+			);
+			path = "MealPlannerAppleWatch Extension";
+			sourceTree = "<group>";
+		};
+		3782E13025CDEADD00E7EBBA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3782E13125CDEADD00E7EBBA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		37A7B57D25CD89F3006D956B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3782E1B225CDEEA000E7EBBA /* CloudKit.framework */,
 				37A7B57E25CD89F3006D956B /* WidgetKit.framework */,
 				37A7B58025CD89F3006D956B /* SwiftUI.framework */,
 			);
@@ -218,16 +334,52 @@
 				3739C3A025C8535F00B258F8 /* Frameworks */,
 				3739C3A125C8535F00B258F8 /* Resources */,
 				37A7B59125CD89F4006D956B /* Embed App Extensions */,
+				3782E13825CDEADD00E7EBBA /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				37A7B58C25CD89F4006D956B /* PBXTargetDependency */,
+				3782E13625CDEADD00E7EBBA /* PBXTargetDependency */,
 			);
 			name = MealPlanner;
 			productName = MealPlanner;
 			productReference = 3739C3A325C8535F00B258F8 /* MealPlanner.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3782E11525CDEADA00E7EBBA /* MealPlannerAppleWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3782E13F25CDEADD00E7EBBA /* Build configuration list for PBXNativeTarget "MealPlannerAppleWatch" */;
+			buildPhases = (
+				3782E11425CDEADA00E7EBBA /* Resources */,
+				3782E13B25CDEADD00E7EBBA /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3782E12225CDEADC00E7EBBA /* PBXTargetDependency */,
+			);
+			name = MealPlannerAppleWatch;
+			productName = MealPlannerAppleWatch;
+			productReference = 3782E11625CDEADA00E7EBBA /* MealPlannerAppleWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		3782E11E25CDEADC00E7EBBA /* MealPlannerAppleWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3782E13E25CDEADD00E7EBBA /* Build configuration list for PBXNativeTarget "MealPlannerAppleWatch Extension" */;
+			buildPhases = (
+				3782E11B25CDEADC00E7EBBA /* Sources */,
+				3782E11C25CDEADC00E7EBBA /* Frameworks */,
+				3782E11D25CDEADC00E7EBBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MealPlannerAppleWatch Extension";
+			productName = "MealPlannerAppleWatch Extension";
+			productReference = 3782E11F25CDEADC00E7EBBA /* MealPlannerAppleWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		37A7B57B25CD89F3006D956B /* MealPlannerWidgetExtension */ = {
 			isa = PBXNativeTarget;
@@ -258,6 +410,12 @@
 					3739C3A225C8535F00B258F8 = {
 						CreatedOnToolsVersion = 12.4;
 					};
+					3782E11525CDEADA00E7EBBA = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					3782E11E25CDEADC00E7EBBA = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					37A7B57B25CD89F3006D956B = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -278,6 +436,8 @@
 			targets = (
 				3739C3A225C8535F00B258F8 /* MealPlanner */,
 				37A7B57B25CD89F3006D956B /* MealPlannerWidgetExtension */,
+				3782E11525CDEADA00E7EBBA /* MealPlannerAppleWatch */,
+				3782E11E25CDEADC00E7EBBA /* MealPlannerAppleWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -290,6 +450,23 @@
 				3739C3AE25C8536000B258F8 /* Preview Assets.xcassets in Resources */,
 				37C39F4525CB5AF70033A1ED /* MealPlanStrings.strings in Resources */,
 				3739C3AB25C8536000B258F8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3782E11425CDEADA00E7EBBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3782E11925CDEADC00E7EBBA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3782E11D25CDEADC00E7EBBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3782E13225CDEADD00E7EBBA /* Preview Assets.xcassets in Resources */,
+				3782E12F25CDEADD00E7EBBA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +506,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3782E11B25CDEADC00E7EBBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3782E16F25CDECC600E7EBBA /* Persistence.swift in Sources */,
+				3782E12925CDEADC00E7EBBA /* NotificationController.swift in Sources */,
+				3782E1A625CDED6300E7EBBA /* Ingredient.swift in Sources */,
+				3782E12D25CDEADC00E7EBBA /* ComplicationController.swift in Sources */,
+				3782E15625CDEC2E00E7EBBA /* MealPlanner.xcdatamodeld in Sources */,
+				3782E1A525CDED6300E7EBBA /* Meal.swift in Sources */,
+				3782E12525CDEADC00E7EBBA /* MealPlannerApp.swift in Sources */,
+				3782E16025CDEC8B00E7EBBA /* MealPlanWatchView.swift in Sources */,
+				3782E1AD25CDED7B00E7EBBA /* MealList.swift in Sources */,
+				3782E1A725CDED6300E7EBBA /* UnitType.swift in Sources */,
+				3782E12B25CDEADC00E7EBBA /* NotificationView.swift in Sources */,
+				3782E1A025CDED5E00E7EBBA /* Recipe.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		37A7B57825CD89F3006D956B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,6 +539,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3782E12225CDEADC00E7EBBA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3782E11E25CDEADC00E7EBBA /* MealPlannerAppleWatch Extension */;
+			targetProxy = 3782E12125CDEADC00E7EBBA /* PBXContainerItemProxy */;
+		};
+		3782E13625CDEADD00E7EBBA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3782E11525CDEADA00E7EBBA /* MealPlannerAppleWatch */;
+			targetProxy = 3782E13525CDEADD00E7EBBA /* PBXContainerItemProxy */;
+		};
 		37A7B58C25CD89F4006D956B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 37A7B57B25CD89F3006D956B /* MealPlannerWidgetExtension */;
@@ -515,6 +721,94 @@
 			};
 			name = Release;
 		};
+		3782E13925CDEADD00E7EBBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TS7732JY9T;
+				IBSC_MODULE = MealPlannerAppleWatch_Extension;
+				INFOPLIST_FILE = MealPlannerAppleWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.prozach.MealPlanner.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		3782E13A25CDEADD00E7EBBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TS7732JY9T;
+				IBSC_MODULE = MealPlannerAppleWatch_Extension;
+				INFOPLIST_FILE = MealPlannerAppleWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.prozach.MealPlanner.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		3782E13C25CDEADD00E7EBBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MealPlannerAppleWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = TS7732JY9T;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MealPlannerAppleWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.prozach.MealPlanner.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		3782E13D25CDEADD00E7EBBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MealPlannerAppleWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = TS7732JY9T;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MealPlannerAppleWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.prozach.MealPlanner.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
 		37A7B58F25CD89F4006D956B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -574,6 +868,24 @@
 			buildConfigurations = (
 				3739C3B325C8536000B258F8 /* Debug */,
 				3739C3B425C8536000B258F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3782E13E25CDEADD00E7EBBA /* Build configuration list for PBXNativeTarget "MealPlannerAppleWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3782E13C25CDEADD00E7EBBA /* Debug */,
+				3782E13D25CDEADD00E7EBBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3782E13F25CDEADD00E7EBBA /* Build configuration list for PBXNativeTarget "MealPlannerAppleWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3782E13925CDEADD00E7EBBA /* Debug */,
+				3782E13A25CDEADD00E7EBBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

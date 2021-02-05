@@ -33,7 +33,6 @@ struct Provider: TimelineProvider{
         let timeline = Timeline(entries: [entry], policy: .atEnd)
         completion(timeline)
     }
-    
 }
 
 struct WidgetEntryView: View{

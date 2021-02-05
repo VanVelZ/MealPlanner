@@ -1,8 +1,8 @@
 //
 //  MealList.swift
-//  MealPlanner
+//  MealPlannerAppleWatch Extension
 //
-//  Created by Zach Vandervelden on 2/4/21.
+//  Created by Zach Vandervelden on 2/5/21.
 //
 
 import SwiftUI
@@ -14,9 +14,9 @@ struct MealList: View {
     
     var body: some View {
             List {
-                NavigationLink("All Recipes", destination: RecipeList())
+                //NavigationLink("All Recipes", destination: RecipeList())
                 ForEach(meals){ meal in
-                    MealItem(meal: meal)
+                    Text(meal.unwrappedName)
                 }
                 .onDelete { (index) in
                     deleteMeal(offsets: index)
@@ -28,11 +28,6 @@ struct MealList: View {
                 .onAppear{ saveMealsForWidget()}
             }
             .navigationTitle("Meals")
-            .navigationBarItems(trailing: Button(action: {
-                addMeal()
-            }, label: {
-                Text(newMealText)
-            }))
     }
     private func saveMealsForWidget(){
         var mealNames: [String] = []
