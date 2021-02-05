@@ -12,14 +12,19 @@ struct RecipeItem: View {
     @ObservedObject var recipe: Recipe
     @State private var editingRecipe: Bool = false
     @Environment(\.managedObjectContext) private var viewContext
-    var addingToMeal: Bool = false
+    var meal: Meal?
     
     
     var body: some View{
         HStack {
             Text(recipe.name ?? defaultRecipeName)
                 .onTapGesture {
-                    editingRecipe = true
+                    if meal == nil{
+                   editingRecipe = true
+                    }
+                    else{
+                        meal?.addToRecipes(recipe)
+                    }
                 }
                 .sheet(isPresented: $editingRecipe, content: {
                     EditRecipeForm(recipe: recipe)

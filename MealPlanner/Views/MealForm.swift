@@ -41,10 +41,8 @@ struct MealForm: View {
             HStack{
                 Button(action: {isAddingExistingRecipe = true}, label: {
                     Text("Add Existing Recipe")
-                        .popover(isPresented: $isAddingExistingRecipe, content: {
-                            List(recipes){recipe in
-                                Text(recipe.unwrappedName)
-                            }
+                        .sheet(isPresented: $isAddingExistingRecipe, content: {
+                            RecipeList(from: meal)
                         })
                 })
                 Spacer()

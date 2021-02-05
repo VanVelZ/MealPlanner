@@ -12,12 +12,24 @@ struct RecipeList: View {
     
     @FetchRequest(sortDescriptors: []) private var recipes: FetchedResults<Recipe>
     
+    var meal: Meal?
+    
+    init(){
+        
+    }
+    init(from meal: Meal){
+        self.meal = meal
+    }
     
     
     var body: some View {
             List {
                 ForEach(recipes){ recipe in
-                    RecipeItem(recipe: recipe)
+                    if meal != nil {
+                        RecipeItem(recipe: recipe, meal: meal)
+                    } else {
+                        RecipeItem(recipe: recipe)
+                    }
                 }
                 .onDelete { (index) in
                     deleteRecipe(offsets: index)

@@ -9,44 +9,44 @@ import WidgetKit
 import SwiftUI
 import Intents
 
-struct RecipeEntry: TimelineEntry{
+struct MealEntry: TimelineEntry{
     var date: Date
-    let meals: [Meal]
+    let meals: [String]
 }
 
 
 struct Provider: TimelineProvider{
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Meal.plannedForDate, ascending: true)]) private var meals: FetchedResults<Meal>
     
-    func placeholder(in context: Context) -> RecipeEntry {
-        let meal: Meal = Meal()
-        meal.name = "Breakfast"
-        meal.plannedForDate = Date()
-        return RecipeEntry(date: Date(), meals: [meal])
+    @AppStorage("mealNames", store: UserDefaults(suiteName: "group.com.prozach.MealPlanner"))
+    var mealNamesData: Data = Data()
+    
+    func placeholder(in context: Context) -> MealEntry {
+        return MealEntry(date: Date(), meals: ["Breakfast", "Lunch", "Dinner"])
     }
     
-    func getSnapshot(in context: Context, completion: @escaping (RecipeEntry) -> Void) {
-        var mealArray: [Meal] = []
-        meals.forEach{mealArray.append($0)}
-        let entry = RecipeEntry(date: Date(), meals: mealArray)
+    func getSnapshot(in context: Context, completion: @escaping (MealEntry) -> Void) {
+        guard let meals = try? JSONDecoder().decode([String].self, from: mealNamesData) else {return}
+        let entry = MealEntry(date: Date(), meals: meals)
         completion(entry)
     }
     
-    func getTimeline(in context: Context, completion: @escaping (Timeline<RecipeEntry>) -> Void) {
-            var mealArray: [Meal] = []
-            meals.forEach{mealArray.append($0)}
-            let entry = RecipeEntry(date: Date(), meals: mealArray)
-            let timeline = Timeline(entries: [entry], policy: .atEnd)
-            completion(timeline)
+    func getTimeline(in context: Context, completion: @escaping (Timeline<MealEntry>) -> Void) {
+        print("getting timeline")
+        guard let meals = try? JSONDecoder().decode([String].self, from: mealNamesData) else {return}
+        let entry = MealEntry(date: Date(), meals: meals)
+        let timeline = Timeline(entries: [entry], policy: .atEnd)
+        completion(timeline)
     }
+    
 }
 
 struct WidgetEntryView: View{
     let entry: Provider.Entry
     
     var body: some View{
-        ForEach(entry.meals){
-            Text($0.unwrappedName)
+        Text("Upcoming meals")
+        ForEach(entry.meals, id: \.self){
+            Text($0)
         }
     }
 }
