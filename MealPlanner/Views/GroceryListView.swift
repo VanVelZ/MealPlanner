@@ -14,34 +14,18 @@ struct GroceryListView: View {
     
     var body: some View {
             List {
-                ForEach(groceryLists){ recipe in
-                    //TODO: add the grocery item view
-                }
-                .onDelete { (index) in
-                    deleteRecipe(offsets: index)
+                ForEach(groceryLists){ list in
+                    NavigationLink(
+                        destination: GroceryView(),
+                        label: {
+                            Text("Grocery shop for \(list.plannedForDate ?? Date())")
+                        })
                 }
             }.onDisappear{
                 PersistenceController.saveContext()
             }
             .navigationTitle("Grocery List")
-            .navigationBarItems(trailing: Button(action: {
-                addRecipe()
-            }, label: {
-                Text(newRecipeText)
-            }))
     }
-    private func deleteRecipe(offsets: IndexSet){
-        withAnimation{
-            offsets.map{groceryLists[$0]}.forEach(viewContext.delete)
-        }
-    }
-    private func addRecipe(){
-        withAnimation{
-            let newRecipe = Recipe(context: viewContext)
-            newRecipe.name = newRecipeText
-        }
-    }
-    private var newRecipeText = "New Recipe"
 }
 
 struct GroceryList_Previews: PreviewProvider {

@@ -12,7 +12,7 @@ struct MealItem: View {
     
     var body: some View {
         HStack {
-            NavigationLink("\(meal.name ?? "Untitled") on \(meal.dayOfTheWeek)", destination: MealForm(meal: meal))
+            NavigationLink("\(meal.name ?? "Untitled") on \(meal.unwrappedDate.dayOfTheWeek)", destination: MealForm(meal: meal))
         }
     }
 }
