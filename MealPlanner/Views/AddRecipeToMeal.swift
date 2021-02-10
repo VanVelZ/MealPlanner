@@ -9,9 +9,11 @@ import SwiftUI
 
 
 struct AddRecipeToMeal: View{
+    
     @ObservedObject var meal: Meal
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: []) private var recipes: FetchedResults<Recipe>
+    
     @State private var isAddingExistingRecipe: Bool = false
     var body: some View{
         HStack{

@@ -11,16 +11,15 @@ import SwiftUI
 struct MealPlannerApp: App {
     
     let persistenceContainer = PersistenceController.shared
-    @FetchRequest(sortDescriptors: []) private var settings: FetchedResults<UserSettings>
+    @FetchRequest(sortDescriptors: []) private var user: FetchedResults<User>
     
     init(){
-        if settings.count == 0{
-            let settings = UserSettings(context: persistenceContainer.container.viewContext)
-            settings.frequencyEnum =  .weekly
-            try? persistenceContainer.container.viewContext.save()
+        if user.count == 0{
+            let user = User(context: persistenceContainer.container.viewContext)
+            user.frequencyEnum =  .weekly
+            PersistenceController.saveContext()
         }
     }
-    
     
     var body: some Scene {
         WindowGroup {

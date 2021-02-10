@@ -41,6 +41,7 @@
 		37A7B58D25CD89F4006D956B /* MealPlannerWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 37A7B57C25CD89F3006D956B /* MealPlannerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		37A7B59725CD8A70006D956B /* MealPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3739C3B625C8538200B258F8 /* MealPlanner.xcdatamodeld */; };
 		37A7B59A25CD8A9A006D956B /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C39F6D25CC64EC0033A1ED /* Meal.swift */; };
+		37B0569D25D44534006543DD /* NSSetExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B0569C25D44534006543DD /* NSSetExtensions.swift */; };
 		37B2725A25CA106F003405A3 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2725925CA106F003405A3 /* RecipeList.swift */; };
 		37B2725D25CA10D5003405A3 /* EditRecipeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2725C25CA10D5003405A3 /* EditRecipeForm.swift */; };
 		37B2726325CA11B2003405A3 /* EditIngredientForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2726225CA11B2003405A3 /* EditIngredientForm.swift */; };
@@ -64,7 +65,7 @@
 		37ECAD3A25D4325300EABEE4 /* NameAndDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECAD3925D4325300EABEE4 /* NameAndDate.swift */; };
 		37ECAD4025D433D600EABEE4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECAD3F25D433D600EABEE4 /* SettingsView.swift */; };
 		37ECAD4625D434F800EABEE4 /* Frequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECAD4525D434F800EABEE4 /* Frequency.swift */; };
-		37ECAD4C25D4363900EABEE4 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECAD4B25D4363900EABEE4 /* UserSettings.swift */; };
+		37ECAD4C25D4363900EABEE4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECAD4B25D4363900EABEE4 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		37A7B58525CD89F3006D956B /* MealPlannerWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = MealPlannerWidget.intentdefinition; sourceTree = "<group>"; };
 		37A7B58625CD89F4006D956B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37A7B58825CD89F4006D956B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37B0569C25D44534006543DD /* NSSetExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSetExtensions.swift; sourceTree = "<group>"; };
 		37B2725925CA106F003405A3 /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
 		37B2725C25CA10D5003405A3 /* EditRecipeForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecipeForm.swift; sourceTree = "<group>"; };
 		37B2726225CA11B2003405A3 /* EditIngredientForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditIngredientForm.swift; sourceTree = "<group>"; };
@@ -183,7 +185,7 @@
 		37ECAD3925D4325300EABEE4 /* NameAndDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameAndDate.swift; sourceTree = "<group>"; };
 		37ECAD3F25D433D600EABEE4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		37ECAD4525D434F800EABEE4 /* Frequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
-		37ECAD4B25D4363900EABEE4 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		37ECAD4B25D4363900EABEE4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 		3739C3A525C8535F00B258F8 /* MealPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				37B0569B25D4451E006543DD /* Extensions */,
 				37A7B57625CD869A006D956B /* MealPlanner.entitlements */,
 				3739C3AC25C8536000B258F8 /* Preview Content */,
 				37B2726025CA1127003405A3 /* Views */,
@@ -316,6 +319,14 @@
 			path = MealPlannerWidget;
 			sourceTree = "<group>";
 		};
+		37B0569B25D4451E006543DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				37B0569C25D44534006543DD /* NSSetExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		37B2725F25CA1119003405A3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,7 +339,7 @@
 				37ECAD1D25D3696700EABEE4 /* DateExtension.swift */,
 				37ECAD2725D42C4400EABEE4 /* GroceryList.swift */,
 				37ECAD4525D434F800EABEE4 /* Frequency.swift */,
-				37ECAD4B25D4363900EABEE4 /* UserSettings.swift */,
+				37ECAD4B25D4363900EABEE4 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -518,7 +529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37ECAD4C25D4363900EABEE4 /* UserSettings.swift in Sources */,
+				37ECAD4C25D4363900EABEE4 /* User.swift in Sources */,
 				3739C3B825C8538200B258F8 /* MealPlanner.xcdatamodeld in Sources */,
 				3739C3BB25C8544400B258F8 /* Persistence.swift in Sources */,
 				37A7B58A25CD89F4006D956B /* MealPlannerWidget.intentdefinition in Sources */,
@@ -537,6 +548,7 @@
 				3739C3A925C8535F00B258F8 /* ContentView.swift in Sources */,
 				37ECAD0025D361F500EABEE4 /* Availability.swift in Sources */,
 				37ECAD1025D3681200EABEE4 /* GroceryView.swift in Sources */,
+				37B0569D25D44534006543DD /* NSSetExtensions.swift in Sources */,
 				37C39F4825CB5E8D0033A1ED /* UnitPicker.swift in Sources */,
 				37B2726925CA12F2003405A3 /* Recipe.swift in Sources */,
 				37ECAD4625D434F800EABEE4 /* Frequency.swift in Sources */,
