@@ -1,21 +1,14 @@
 //
-//  Recipe.swift
+//  GroceryList.swift
 //  MealPlanner
 //
-//  Created by Zach Vandervelden on 2/2/21.
+//  Created by Zach Vandervelden on 2/10/21.
 //
 
 import Foundation
 
-extension Recipe{
-    var unwrappedName: String {
-        get{
-            self.name!
-        }
-        set{
-            name = newValue
-        }
-    }
+extension GroceryList {
+    
     var safeIngredients: [Ingredient] {
         get{
         var ingredientArray: [Ingredient] = []
@@ -29,4 +22,3 @@ extension Recipe{
         }
     }
 }
-

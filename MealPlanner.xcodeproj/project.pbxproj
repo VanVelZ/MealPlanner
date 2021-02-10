@@ -58,6 +58,8 @@
 		37ECAD0625D3632100EABEE4 /* GroceryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECAD0525D3632100EABEE4 /* GroceryListView.swift */; };
 		37ECAD1025D3681200EABEE4 /* GroceryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECAD0F25D3681200EABEE4 /* GroceryView.swift */; };
 		37ECAD1E25D3696700EABEE4 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECAD1D25D3696700EABEE4 /* DateExtension.swift */; };
+		37ECAD2825D42C4400EABEE4 /* GroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECAD2725D42C4400EABEE4 /* GroceryList.swift */; };
+		37ECAD2E25D4303600EABEE4 /* IngredientListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECAD2D25D4303600EABEE4 /* IngredientListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +172,8 @@
 		37ECAD0525D3632100EABEE4 /* GroceryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListView.swift; sourceTree = "<group>"; };
 		37ECAD0F25D3681200EABEE4 /* GroceryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryView.swift; sourceTree = "<group>"; };
 		37ECAD1D25D3696700EABEE4 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		37ECAD2725D42C4400EABEE4 /* GroceryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryList.swift; sourceTree = "<group>"; };
+		37ECAD2D25D4303600EABEE4 /* IngredientListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +316,7 @@
 				37C39F6D25CC64EC0033A1ED /* Meal.swift */,
 				37ECACFF25D361F500EABEE4 /* Availability.swift */,
 				37ECAD1D25D3696700EABEE4 /* DateExtension.swift */,
+				37ECAD2725D42C4400EABEE4 /* GroceryList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				37C39F4D25CC4D840033A1ED /* MealItem.swift */,
 				37ECAD0525D3632100EABEE4 /* GroceryListView.swift */,
 				37ECAD0F25D3681200EABEE4 /* GroceryView.swift */,
+				37ECAD2D25D4303600EABEE4 /* IngredientListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -500,6 +506,7 @@
 				3739C3B825C8538200B258F8 /* MealPlanner.xcdatamodeld in Sources */,
 				3739C3BB25C8544400B258F8 /* Persistence.swift in Sources */,
 				37A7B58A25CD89F4006D956B /* MealPlannerWidget.intentdefinition in Sources */,
+				37ECAD2825D42C4400EABEE4 /* GroceryList.swift in Sources */,
 				37C39F4B25CC4C1B0033A1ED /* MealList.swift in Sources */,
 				37C39F6E25CC64EC0033A1ED /* Meal.swift in Sources */,
 				37B2726C25CA12FD003405A3 /* Ingredient.swift in Sources */,
@@ -507,6 +514,7 @@
 				37ECAD0625D3632100EABEE4 /* GroceryListView.swift in Sources */,
 				37B2726325CA11B2003405A3 /* EditIngredientForm.swift in Sources */,
 				37B2725A25CA106F003405A3 /* RecipeList.swift in Sources */,
+				37ECAD2E25D4303600EABEE4 /* IngredientListView.swift in Sources */,
 				37C39F4E25CC4D840033A1ED /* MealItem.swift in Sources */,
 				3739C3A925C8535F00B258F8 /* ContentView.swift in Sources */,
 				37ECAD0025D361F500EABEE4 /* Availability.swift in Sources */,

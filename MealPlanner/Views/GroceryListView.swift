@@ -10,13 +10,13 @@ import SwiftUI
 struct GroceryListView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: []) private var groceryLists: FetchedResults<GroceryList>
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \GroceryList.plannedForDate, ascending: true)]) private var groceryLists: FetchedResults<GroceryList>
     
     var body: some View {
             List {
                 ForEach(groceryLists){ list in
                     NavigationLink(
-                        destination: GroceryView(),
+                        destination: GroceryView(groceries: list),
                         label: {
                             Text("Grocery shop for \(list.plannedForDate ?? Date())")
                         })

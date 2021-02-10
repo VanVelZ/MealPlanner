@@ -39,15 +39,7 @@ struct EditRecipeForm: View{
                 }
             }
             Section(header: Text("Ingredients").font(.subheadline)){
-                List{
-                ForEach(recipe.safeIngredients){ ingredient in
-                    EditIngredientForm(ingredient: ingredient)
-                }
-                .onDelete { (indices) in
-                    indices.map{recipe.safeIngredients[$0]}.forEach(viewContext.delete)
-                }
-                EditIngredientForm(ingredient: Ingredient(context: viewContext))
-            }
+                IngredientListView(ingredients: $recipe.safeIngredients)
             }
             .environmentObject(recipe)
         }

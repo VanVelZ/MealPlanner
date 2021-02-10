@@ -8,13 +8,10 @@
 import SwiftUI
 
 struct GroceryView: View {
+    
+    @ObservedObject var groceries: GroceryList
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct GroceryItem_Previews: PreviewProvider {
-    static var previews: some View {
-        GroceryView()
+        IngredientListView(ingredients: $groceries.safeIngredients)
     }
 }
