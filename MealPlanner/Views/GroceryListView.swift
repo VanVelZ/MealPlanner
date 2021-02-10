@@ -18,7 +18,7 @@ struct GroceryListView: View {
                     NavigationLink(
                         destination: GroceryView(groceries: list),
                         label: {
-                            Text("Grocery shop for \(list.plannedForDate ?? Date())")
+                            Text("Grocery shop for \(list.plannedForDate?.dayOfTheWeek ?? Date().dayOfTheWeek)")
                         })
                 }
             }.onDisappear{

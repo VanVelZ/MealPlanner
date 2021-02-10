@@ -15,8 +15,9 @@ struct ContentView: View {
     var body: some View{
         NavigationView {
             GroceryListView()
-                .environmentObject(users[0])
+            MealList()
         }
+        .environmentObject(users[0])
     }
 }
 struct ContentView_Previews: PreviewProvider {

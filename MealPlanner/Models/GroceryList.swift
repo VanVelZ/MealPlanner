@@ -9,16 +9,16 @@ import Foundation
 
 extension GroceryList {
     
-    var safeIngredients: [Ingredient] {
+    var safeGroceryItems: [GroceryItem] {
         get{
-        var ingredientArray: [Ingredient] = []
-        for ingredient in ingredients! {
-            ingredientArray.append(ingredient as! Ingredient)
+        var groceryItemsArray: [GroceryItem] = []
+        for groceryItem in groceryItems! {
+            groceryItemsArray.append(groceryItem as! GroceryItem)
         }
-        return ingredientArray
+        return groceryItemsArray
     }
         set{
-            ingredients =  NSSet(array: newValue)
+            groceryItems =  NSSet(array: newValue)
         }
     }
 }

@@ -3,12 +3,12 @@
     <entity name="GroceryItem" representedClassName="GroceryItem" syncable="YES" codeGenerationType="class">
         <attribute name="availability" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="ingredient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="groceryItems" inverseEntity="Ingredient"/>
-        <relationship name="inLists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroceryList" inverseName="ingredients" inverseEntity="GroceryList"/>
+        <relationship name="inLists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroceryList" inverseName="groceryItems" inverseEntity="GroceryList"/>
     </entity>
     <entity name="GroceryList" representedClassName="GroceryList" syncable="YES" codeGenerationType="class">
         <attribute name="plannedForDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="forUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="groceryLists" inverseEntity="User"/>
-        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroceryItem" inverseName="inLists" inverseEntity="GroceryItem"/>
+        <relationship name="groceryItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroceryItem" inverseName="inLists" inverseEntity="GroceryItem"/>
     </entity>
     <entity name="Ingredient" representedClassName="Ingredient" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
