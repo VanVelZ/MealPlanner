@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D64" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="GroceryItem" representedClassName="GroceryItem" syncable="YES" codeGenerationType="class">
+        <attribute name="availability" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="ingredient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="groceryItems" inverseEntity="Ingredient"/>
+        <relationship name="inLists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroceryList" inverseName="ingredients" inverseEntity="GroceryList"/>
+    </entity>
+    <entity name="GroceryList" representedClassName="GroceryList" syncable="YES" codeGenerationType="class">
+        <attribute name="plannedForDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroceryItem" inverseName="inLists" inverseEntity="GroceryItem"/>
+    </entity>
     <entity name="Ingredient" representedClassName="Ingredient" syncable="YES" codeGenerationType="class">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="unit" optional="YES" attributeType="String"/>
         <relationship name="forRecipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="ingredients" inverseEntity="Recipe"/>
+        <relationship name="groceryItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroceryItem" inverseName="ingredient" inverseEntity="GroceryItem"/>
     </entity>
     <entity name="Meal" representedClassName="Meal" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -17,8 +27,10 @@
         <relationship name="inMeals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Meal" inverseName="recipes" inverseEntity="Meal"/>
     </entity>
     <elements>
-        <element name="Ingredient" positionX="-339.5140380859375" positionY="-167.8909149169922" width="128" height="89"/>
+        <element name="Ingredient" positionX="-455.0059814453125" positionY="-172.406005859375" width="128" height="118"/>
         <element name="Meal" positionX="-114.9387817382812" positionY="259.2094726562499" width="128" height="88"/>
         <element name="Recipe" positionX="-609.54833984375" positionY="218.3893432617188" width="128" height="88"/>
+        <element name="GroceryList" positionX="78.662109375" positionY="-179.3008728027344" width="128" height="73"/>
+        <element name="GroceryItem" positionX="-209.775146484375" positionY="-263.833984375" width="128" height="88"/>
     </elements>
 </model>
