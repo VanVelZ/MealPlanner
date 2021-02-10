@@ -26,11 +26,15 @@
         <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="forRecipe" inverseEntity="Ingredient"/>
         <relationship name="inMeals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Meal" inverseName="recipes" inverseEntity="Meal"/>
     </entity>
+    <entity name="UserSettings" representedClassName="UserSettings" syncable="YES" codeGenerationType="class">
+        <attribute name="groceryFrequency" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
     <elements>
+        <element name="GroceryItem" positionX="-209.775146484375" positionY="-263.833984375" width="128" height="88"/>
+        <element name="GroceryList" positionX="78.662109375" positionY="-179.3008728027344" width="128" height="73"/>
         <element name="Ingredient" positionX="-455.0059814453125" positionY="-172.406005859375" width="128" height="118"/>
         <element name="Meal" positionX="-114.9387817382812" positionY="259.2094726562499" width="128" height="88"/>
         <element name="Recipe" positionX="-609.54833984375" positionY="218.3893432617188" width="128" height="88"/>
-        <element name="GroceryList" positionX="78.662109375" positionY="-179.3008728027344" width="128" height="73"/>
-        <element name="GroceryItem" positionX="-209.775146484375" positionY="-263.833984375" width="128" height="88"/>
+        <element name="UserSettings" positionX="-387" positionY="-90" width="128" height="44"/>
     </elements>
 </model>

@@ -24,6 +24,11 @@ struct GroceryListView: View {
             }.onDisappear{
                 PersistenceController.saveContext()
             }
+            .navigationBarItems(trailing: NavigationLink(
+                                    destination: SettingsView(),
+                                    label: {
+                                        Text("Settings")
+                                    }))
             .navigationTitle("Grocery List")
     }
 }

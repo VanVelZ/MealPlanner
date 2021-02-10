@@ -9,9 +9,11 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @FetchRequest(sortDescriptors: []) private var settings: FetchedResults<UserSettings>
     var body: some View{
         NavigationView {
             GroceryListView()
+                .environmentObject(settings[0])
         }
     }
 }

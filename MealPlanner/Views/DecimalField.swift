@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 
 struct DecimalField : View {
+    
     let label: LocalizedStringKey
     @Binding var value: Double?
     let formatter: NumberFormatter
