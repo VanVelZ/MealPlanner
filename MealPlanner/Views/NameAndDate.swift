@@ -13,11 +13,10 @@ struct NameAndDate: View {
     @Binding var date: Date
     
     var body: some View {
-        VStack {
+        HStack {
             TextField("name", text: $name)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .font(.title).padding()
-            DatePicker("", selection: $date, in: Date()..., displayedComponents: .date).datePickerStyle(GraphicalDatePickerStyle())
+                .font(.headline)
+            DatePicker("", selection: $date, in: Date()..., displayedComponents: .date)
         }
     }
 }

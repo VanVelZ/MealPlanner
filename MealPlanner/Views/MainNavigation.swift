@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainNavigation: View {
+    @FetchRequest(sortDescriptors: []) private var users: FetchedResults<User>
     var body: some View {
         NavigationView{
             List {
@@ -28,6 +29,7 @@ struct MainNavigation: View {
                                         Text("Settings")
                                     }))
         }
+        .environmentObject(users[0])
     }
 }
 

@@ -9,15 +9,19 @@ import SwiftUI
 
 struct MealForm: View {
     
-    @ObservedObject var meal: Meal
+    @ObservedObject var meal: Meal = Meal()
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var user: User
     
+    
+    init(meal: Meal){
+        self.meal = meal
+    }
+    
+    
     var body: some View {
         Form{
-            Section{
-                NameAndDate(name: $meal.unwrappedName, date: $meal.unwrappedDate)
-            }
+            NameAndDate(name: $meal.unwrappedName, date: $meal.unwrappedDate)
             Section(header: AddRecipeToMeal(meal: meal)) {
                 ForEach(meal.safeRecipes){ recipe in
                     RecipeItem(recipe: recipe)

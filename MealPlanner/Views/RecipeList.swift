@@ -57,9 +57,3 @@ struct RecipeList: View {
     }
     private var newRecipeText = "New Recipe"
 }
-
-struct RecipeList_Previews: PreviewProvider {
-    static var previews: some View {
-        RecipeList()
-    }
-}

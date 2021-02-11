@@ -23,7 +23,7 @@ struct MealPlannerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainNavigation()
                 .environment(\.managedObjectContext, persistenceContainer.container.viewContext)
         }
     }

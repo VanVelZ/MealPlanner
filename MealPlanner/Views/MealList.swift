@@ -12,6 +12,16 @@ struct MealList: View {
     @EnvironmentObject var user: User
     
     
+    private func addMeal() -> Meal{
+        withAnimation{
+            let newMeal = Meal(context: viewContext)
+            newMeal.name = "New Meal"
+            newMeal.plannedForDate = Date()
+            user.addToMeals(newMeal)
+            return newMeal
+        }
+    }
+    
     var body: some View {
             List {
                     NavigationLink("All Recipes", destination: RecipeList())
@@ -26,23 +36,15 @@ struct MealList: View {
                     }
                 }
                 .navigationTitle("Meals")
-                .navigationBarItems(trailing: Button(action: {
-                    addMeal()
-                }, label: {
-                    Text(newMealText)
-            }))
+                .navigationBarItems(trailing: NavigationLink(
+                                        destination: MealForm(meal: addMeal()),
+                                        label: {
+                                            Text("\(newMealText)")
+                                        }))
     }
     private func deleteMeal(offsets: IndexSet){
         withAnimation{
             offsets.map{user.safeMeals[$0]}.forEach(viewContext.delete)
-        }
-    }
-    private func addMeal(){
-        withAnimation{
-            let newMeal = Meal(context: viewContext)
-            newMeal.name = newMealText
-            newMeal.plannedForDate = Date()
-            newMeal.forUser = user
         }
     }
     private var newMealText = "New Meal"

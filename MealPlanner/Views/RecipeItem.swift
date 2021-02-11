@@ -17,18 +17,19 @@ struct RecipeItem: View {
     
     var body: some View{
         HStack {
-            Text(recipe.name ?? defaultRecipeName)
-                .onTapGesture {
-                    if meal == nil{
-                   editingRecipe = true
-                    }
-                    else{
+            if meal == nil{
+                NavigationLink(
+                    destination: EditRecipeForm(recipe: recipe),
+                    label: {
+                        Text("\(recipe.unwrappedName)")
+                    })
+            }
+            else{
+                Text(recipe.name ?? defaultRecipeName)
+                    .onTapGesture {
                         meal?.addToRecipes(recipe)
                     }
-                }
-                .sheet(isPresented: $editingRecipe, content: {
-                    EditRecipeForm(recipe: recipe)
-                })
+            }
         }.onDisappear{
             PersistenceController.saveContext()
         }
