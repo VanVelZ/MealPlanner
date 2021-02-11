@@ -13,10 +13,7 @@ struct ContentView: View {
     @FetchRequest(sortDescriptors: []) private var users: FetchedResults<User>
     
     var body: some View{
-        NavigationView {
-            GroceryListView()
-            MealList()
-        }
+            MainNavigation()
         .environmentObject(users[0])
     }
 }

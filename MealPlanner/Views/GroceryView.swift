@@ -12,8 +12,10 @@ struct GroceryView: View {
     @ObservedObject var groceries: GroceryList
     
     var body: some View {
-        List(groceries.safeGroceryItems){ item in
-            GroceryItemView(groceryItem: item)
-        }
+            List{
+                ForEach(groceries.safeGroceryItems) { item in
+                    GroceryItemView(groceryItem: item)
+                }
+            }
     }
 }

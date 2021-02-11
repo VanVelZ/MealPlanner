@@ -9,39 +9,32 @@ import SwiftUI
 
 struct MealList: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Meal.plannedForDate, ascending: true)]) private var meals: FetchedResults<Meal>
+    @EnvironmentObject var user: User
     
     
     var body: some View {
             List {
-                NavigationLink("All Recipes", destination: RecipeList())
-                ForEach(meals){ meal in
-                    MealItem(meal: meal)
+                    NavigationLink("All Recipes", destination: RecipeList())
+                    ForEach(user.safeMeals){ meal in
+                        MealItem(meal: meal)
+                    }
+                    .onDelete { (index) in
+                        deleteMeal(offsets: index)
+                    }
+                    .onDisappear{
+                        PersistenceController.saveContext()
+                    }
                 }
-                .onDelete { (index) in
-                    deleteMeal(offsets: index)
-                }
-                .onDisappear{
-                    PersistenceController.saveContext()
-                    saveMealsForWidget()
-                }
-                .onAppear{ saveMealsForWidget()}
-            }
-            .navigationTitle("Meals")
-            .navigationBarItems(trailing: Button(action: {
-                addMeal()
-            }, label: {
-                Text(newMealText)
+                .navigationTitle("Meals")
+                .navigationBarItems(trailing: Button(action: {
+                    addMeal()
+                }, label: {
+                    Text(newMealText)
             }))
-    }
-    private func saveMealsForWidget(){
-        var mealNames: [String] = []
-        meals.forEach{mealNames.append($0.unwrappedName)}
-        UserDefaults.standard.set(mealNames, forKey: "mealNamesArray")
     }
     private func deleteMeal(offsets: IndexSet){
         withAnimation{
-            offsets.map{meals[$0]}.forEach(viewContext.delete)
+            offsets.map{user.safeMeals[$0]}.forEach(viewContext.delete)
         }
     }
     private func addMeal(){
@@ -49,6 +42,7 @@ struct MealList: View {
             let newMeal = Meal(context: viewContext)
             newMeal.name = newMealText
             newMeal.plannedForDate = Date()
+            newMeal.forUser = user
         }
     }
     private var newMealText = "New Meal"

@@ -14,6 +14,7 @@
 		3739C3AE25C8536000B258F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3739C3AD25C8536000B258F8 /* Preview Assets.xcassets */; };
 		3739C3B825C8538200B258F8 /* MealPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3739C3B625C8538200B258F8 /* MealPlanner.xcdatamodeld */; };
 		3739C3BB25C8544400B258F8 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3739C3BA25C8544400B258F8 /* Persistence.swift */; };
+		3774E8A725D59329008D51A9 /* MainNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3774E8A625D59329008D51A9 /* MainNavigation.swift */; };
 		3782E11925CDEADC00E7EBBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3782E11825CDEADC00E7EBBA /* Assets.xcassets */; };
 		3782E12025CDEADC00E7EBBA /* MealPlannerAppleWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3782E11F25CDEADC00E7EBBA /* MealPlannerAppleWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3782E12525CDEADC00E7EBBA /* MealPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3782E12425CDEADC00E7EBBA /* MealPlannerApp.swift */; };
@@ -139,6 +140,7 @@
 		3739C3AF25C8536000B258F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3739C3B725C8538200B258F8 /* MealPlanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MealPlanner.xcdatamodel; sourceTree = "<group>"; };
 		3739C3BA25C8544400B258F8 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		3774E8A625D59329008D51A9 /* MainNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigation.swift; sourceTree = "<group>"; };
 		3782E11625CDEADA00E7EBBA /* MealPlannerAppleWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealPlannerAppleWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3782E11825CDEADC00E7EBBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3782E11A25CDEADC00E7EBBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				37ECAD3925D4325300EABEE4 /* NameAndDate.swift */,
 				37ECAD3F25D433D600EABEE4 /* SettingsView.swift */,
 				37B056A625D456B6006543DD /* GroceryItemView.swift */,
+				3774E8A625D59329008D51A9 /* MainNavigation.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				3739C3B825C8538200B258F8 /* MealPlanner.xcdatamodeld in Sources */,
 				3739C3BB25C8544400B258F8 /* Persistence.swift in Sources */,
 				37A7B58A25CD89F4006D956B /* MealPlannerWidget.intentdefinition in Sources */,
+				3774E8A725D59329008D51A9 /* MainNavigation.swift in Sources */,
 				37ECAD2825D42C4400EABEE4 /* GroceryList.swift in Sources */,
 				37ECAD3A25D4325300EABEE4 /* NameAndDate.swift in Sources */,
 				37C39F4B25CC4C1B0033A1ED /* MealList.swift in Sources */,

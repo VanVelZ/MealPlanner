@@ -11,6 +11,7 @@ struct MealForm: View {
     
     @ObservedObject var meal: Meal
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var user: User
     
     var body: some View {
         Form{
@@ -26,6 +27,7 @@ struct MealForm: View {
             }
         }.onDisappear{
             PersistenceController.saveContext()
+            user.redoGroceryList()
         }
     }
     private func deleteRecipe(offsets: IndexSet){

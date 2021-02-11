@@ -13,23 +13,16 @@ struct GroceryListView: View {
     @EnvironmentObject var user: User
     
     var body: some View {
-            List {
-                ForEach(user.safeGroceryList){ list in
-                    NavigationLink(
-                        destination: GroceryView(groceries: list),
-                        label: {
-                            Text("Grocery shop for \(list.plannedForDate?.dayOfTheWeek ?? Date().dayOfTheWeek)")
-                        })
-                }
-            }.onDisappear{
-                PersistenceController.saveContext()
-            }
-            .navigationBarItems(trailing: NavigationLink(
-                                    destination: SettingsView(),
-                                    label: {
-                                        Text("Settings")
-                                    }))
-            .navigationTitle("Grocery List")
+        List(user.safeGroceryList.sorted(by: {$0.unwrappedDate < $1.unwrappedDate})){ list in
+            NavigationLink(
+                destination: GroceryView(groceries: list),
+                label: {
+                    Text("Grocery shop for \(list.unwrappedDate.dayOfTheWeek)")
+                })
+        }.onDisappear{
+            PersistenceController.saveContext()
+        }
+        .navigationTitle("Grocery List")
     }
 }
 

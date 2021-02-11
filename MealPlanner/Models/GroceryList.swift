@@ -9,6 +9,15 @@ import Foundation
 
 extension GroceryList {
     
+    var unwrappedDate: Date {
+        get{
+            plannedForDate ?? Date()
+        }
+        set {
+            plannedForDate = newValue
+        }
+    }
+    
     var safeGroceryItems: [GroceryItem] {
         get{
         var groceryItemsArray: [GroceryItem] = []

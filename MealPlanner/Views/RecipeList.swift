@@ -24,24 +24,24 @@ struct RecipeList: View {
     
     var body: some View {
             List {
-                ForEach(recipes){ recipe in
-                    if meal != nil {
-                        RecipeItem(recipe: recipe, meal: meal)
-                    } else {
-                        RecipeItem(recipe: recipe)
+                    ForEach(recipes){ recipe in
+                        if meal != nil {
+                            RecipeItem(recipe: recipe, meal: meal)
+                        } else {
+                            RecipeItem(recipe: recipe)
+                        }
                     }
+                    .onDelete { (index) in
+                        deleteRecipe(offsets: index)
+                    }
+                }.onDisappear{
+                    PersistenceController.saveContext()
                 }
-                .onDelete { (index) in
-                    deleteRecipe(offsets: index)
-                }
-            }.onDisappear{
-                PersistenceController.saveContext()
-            }
-            .navigationTitle("Recipes")
-            .navigationBarItems(trailing: Button(action: {
-                addRecipe()
-            }, label: {
-                Text(newRecipeText)
+                .navigationTitle("Recipes")
+                .navigationBarItems(trailing: Button(action: {
+                    addRecipe()
+                }, label: {
+                    Text(newRecipeText)
             }))
     }
     private func deleteRecipe(offsets: IndexSet){
