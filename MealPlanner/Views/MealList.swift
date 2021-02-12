@@ -27,15 +27,17 @@ struct MealList: View {
                 }
             }
             HStack{
+                HStack{
+                    NavigationLink(
+                        destination: MealForm(isNewMeal: true),
+                        label: {
+                            Image(systemName: "plus.circle")
+                        })
+                    Text("New Meal")
+                }
+                .font(.title)
+                .padding()
                 Spacer()
-            ZStack{
-                Circle().foregroundColor(.blue).frame(maxWidth: 100, maxHeight: 100)
-                NavigationLink(
-                    destination: MealForm(isNewMeal: true),
-                    label: {
-                        Image(systemName: "plus").font(.largeTitle).foregroundColor(.black)
-                    }).padding()
-            }.padding()
             }
         }
         .navigationTitle("Meals")
