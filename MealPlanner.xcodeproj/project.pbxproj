@@ -266,6 +266,65 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		3774E8B025D6D891008D51A9 /* Meal */ = {
+			isa = PBXGroup;
+			children = (
+				37C39F4125CB317C0033A1ED /* MealForm.swift */,
+				37C39F4A25CC4C1B0033A1ED /* MealList.swift */,
+				37C39F4D25CC4D840033A1ED /* MealItem.swift */,
+			);
+			path = Meal;
+			sourceTree = "<group>";
+		};
+		3774E8B125D6D8A4008D51A9 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				37B2725C25CA10D5003405A3 /* EditRecipeForm.swift */,
+				37B2725925CA106F003405A3 /* RecipeList.swift */,
+				37B2726525CA1237003405A3 /* RecipeItem.swift */,
+				37ECAD3325D431B700EABEE4 /* AddRecipeToMeal.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		3774E8B225D6D8BB008D51A9 /* Ingredient */ = {
+			isa = PBXGroup;
+			children = (
+				37B2726225CA11B2003405A3 /* EditIngredientForm.swift */,
+				37ECAD2D25D4303600EABEE4 /* IngredientListView.swift */,
+			);
+			path = Ingredient;
+			sourceTree = "<group>";
+		};
+		3774E8B325D6D8D6008D51A9 /* Grocery */ = {
+			isa = PBXGroup;
+			children = (
+				37ECAD0525D3632100EABEE4 /* GroceryListView.swift */,
+				37ECAD0F25D3681200EABEE4 /* GroceryView.swift */,
+				37B056A625D456B6006543DD /* GroceryItemView.swift */,
+			);
+			path = Grocery;
+			sourceTree = "<group>";
+		};
+		3774E8B425D6D8F1008D51A9 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				37ECAD3F25D433D600EABEE4 /* SettingsView.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		3774E8B525D6D901008D51A9 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				37C39F3E25CB1ECA0033A1ED /* DecimalField.swift */,
+				37C39F4725CB5E8D0033A1ED /* UnitPicker.swift */,
+				37ECAD3925D4325300EABEE4 /* NameAndDate.swift */,
+				3774E8A625D59329008D51A9 /* MainNavigation.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		3782E11725CDEADA00E7EBBA /* MealPlannerAppleWatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,23 +408,12 @@
 		37B2726025CA1127003405A3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				37B2725C25CA10D5003405A3 /* EditRecipeForm.swift */,
-				37B2725925CA106F003405A3 /* RecipeList.swift */,
-				37B2726225CA11B2003405A3 /* EditIngredientForm.swift */,
-				37B2726525CA1237003405A3 /* RecipeItem.swift */,
-				37C39F3E25CB1ECA0033A1ED /* DecimalField.swift */,
-				37C39F4125CB317C0033A1ED /* MealForm.swift */,
-				37C39F4725CB5E8D0033A1ED /* UnitPicker.swift */,
-				37C39F4A25CC4C1B0033A1ED /* MealList.swift */,
-				37C39F4D25CC4D840033A1ED /* MealItem.swift */,
-				37ECAD0525D3632100EABEE4 /* GroceryListView.swift */,
-				37ECAD0F25D3681200EABEE4 /* GroceryView.swift */,
-				37ECAD2D25D4303600EABEE4 /* IngredientListView.swift */,
-				37ECAD3325D431B700EABEE4 /* AddRecipeToMeal.swift */,
-				37ECAD3925D4325300EABEE4 /* NameAndDate.swift */,
-				37ECAD3F25D433D600EABEE4 /* SettingsView.swift */,
-				37B056A625D456B6006543DD /* GroceryItemView.swift */,
-				3774E8A625D59329008D51A9 /* MainNavigation.swift */,
+				3774E8B525D6D901008D51A9 /* Utility */,
+				3774E8B425D6D8F1008D51A9 /* User */,
+				3774E8B325D6D8D6008D51A9 /* Grocery */,
+				3774E8B225D6D8BB008D51A9 /* Ingredient */,
+				3774E8B125D6D8A4008D51A9 /* Recipe */,
+				3774E8B025D6D891008D51A9 /* Meal */,
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D64" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D74" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="GroceryItem" representedClassName="GroceryItem" syncable="YES" codeGenerationType="class">
         <attribute name="availability" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="ingredient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="groceryItems" inverseEntity="Ingredient"/>
         <relationship name="inLists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroceryList" inverseName="groceryItems" inverseEntity="GroceryList"/>
+        <relationship name="pantry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pantry" inverseName="groceryItems" inverseEntity="Pantry"/>
     </entity>
     <entity name="GroceryList" representedClassName="GroceryList" syncable="YES" codeGenerationType="class">
         <attribute name="plannedForDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -16,6 +17,7 @@
         <attribute name="unit" optional="YES" attributeType="String"/>
         <relationship name="forRecipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="ingredients" inverseEntity="Recipe"/>
         <relationship name="groceryItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroceryItem" inverseName="ingredient" inverseEntity="GroceryItem"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="ingredients" inverseEntity="User"/>
     </entity>
     <entity name="Meal" representedClassName="Meal" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -23,22 +25,31 @@
         <relationship name="forUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="meals" inverseEntity="User"/>
         <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="inMeals" inverseEntity="Recipe"/>
     </entity>
+    <entity name="Pantry" representedClassName="Pantry" syncable="YES" codeGenerationType="class">
+        <relationship name="groceryItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroceryItem" inverseName="pantry" inverseEntity="GroceryItem"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="pantry" inverseEntity="User"/>
+    </entity>
     <entity name="Recipe" representedClassName="Recipe" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="forRecipe" inverseEntity="Ingredient"/>
         <relationship name="inMeals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Meal" inverseName="recipes" inverseEntity="Meal"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="recipes" inverseEntity="User"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="groceryFrequency" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="groceryLists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GroceryList" inverseName="forUser" inverseEntity="GroceryList"/>
+        <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="user" inverseEntity="Ingredient"/>
         <relationship name="meals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Meal" inverseName="forUser" inverseEntity="Meal"/>
+        <relationship name="pantry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pantry" inverseName="user" inverseEntity="Pantry"/>
+        <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="user" inverseEntity="Recipe"/>
     </entity>
     <elements>
-        <element name="GroceryItem" positionX="-209.775146484375" positionY="-263.833984375" width="128" height="88"/>
-        <element name="GroceryList" positionX="78.662109375" positionY="-179.3008728027344" width="128" height="88"/>
-        <element name="Ingredient" positionX="-455.0059814453125" positionY="-172.406005859375" width="128" height="118"/>
-        <element name="Meal" positionX="-115.1430053710937" positionY="270.2598876953124" width="128" height="103"/>
-        <element name="Recipe" positionX="-609.54833984375" positionY="218.3893432617188" width="128" height="88"/>
-        <element name="User" positionX="-217.4295043945312" positionY="-0.491180419921875" width="128" height="88"/>
+        <element name="GroceryItem" positionX="-209.775146484375" positionY="-263.833984375" width="128" height="103"/>
+        <element name="GroceryList" positionX="232.602783203125" positionY="-83.44107055664062" width="128" height="88"/>
+        <element name="Ingredient" positionX="-509.044189453125" positionY="-195.2755889892578" width="128" height="133"/>
+        <element name="Meal" positionX="32.36700439453131" positionY="248.0910034179686" width="128" height="103"/>
+        <element name="Recipe" positionX="-609.54833984375" positionY="218.3893432617188" width="128" height="103"/>
+        <element name="User" positionX="-243.2862548828124" positionY="17.0662841796875" width="128" height="133"/>
+        <element name="Pantry" positionX="108.9541015625" positionY="-260.2954406738281" width="128" height="73"/>
     </elements>
 </model>
