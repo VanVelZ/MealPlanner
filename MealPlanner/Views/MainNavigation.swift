@@ -24,6 +24,7 @@ struct MainNavigation: View {
                     label: {
                         Text("Groceries")
                     })
+                NavigationLink("Recipes", destination: RecipeList())
             }
             .navigationTitle("ProFoods")
             .navigationBarItems(trailing: NavigationLink(

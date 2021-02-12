@@ -8,6 +8,7 @@
 import Foundation
 
 extension Meal{
+    
     var unwrappedName: String {
         get{
             name ?? ""

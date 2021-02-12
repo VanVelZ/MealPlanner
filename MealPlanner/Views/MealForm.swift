@@ -9,11 +9,15 @@ import SwiftUI
 
 struct MealForm: View {
     
-    @ObservedObject var meal: Meal = Meal()
+    @ObservedObject var meal: Meal
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var user: User
+    private var isNewMeal:Bool = false
     
-    
+    init(isNewMeal: Bool){
+        self.isNewMeal = isNewMeal
+        meal = Meal(context: PersistenceController.shared.container.viewContext)
+    }
     init(meal: Meal){
         self.meal = meal
     }
@@ -29,9 +33,20 @@ struct MealForm: View {
                     deleteRecipe(offsets: indexSet)
                 })
             }
-        }.onDisappear{
-            PersistenceController.saveContext()
-            user.redoGroceryList()
+        }
+        .navigationTitle(meal.unwrappedName)
+        .onDisappear{
+            if isNewMeal {addMeal()}
+            if(meal.name != nil){
+                PersistenceController.saveContext()
+                user.redoGroceryList()
+            }
+            else{viewContext.delete(meal)}
+        }
+    }
+    private func addMeal(){
+        withAnimation{
+            user.addToMeals(meal)
         }
     }
     private func deleteRecipe(offsets: IndexSet){

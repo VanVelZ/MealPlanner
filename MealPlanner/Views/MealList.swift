@@ -12,35 +12,33 @@ struct MealList: View {
     @EnvironmentObject var user: User
     
     
-    private func addMeal() -> Meal{
-        withAnimation{
-            let newMeal = Meal(context: viewContext)
-            newMeal.name = "New Meal"
-            newMeal.plannedForDate = Date()
-            user.addToMeals(newMeal)
-            return newMeal
-        }
-    }
     
     var body: some View {
+        VStack{
             List {
-                    NavigationLink("All Recipes", destination: RecipeList())
-                    ForEach(user.safeMeals){ meal in
-                        MealItem(meal: meal)
-                    }
-                    .onDelete { (index) in
-                        deleteMeal(offsets: index)
-                    }
-                    .onDisappear{
-                        PersistenceController.saveContext()
-                    }
+                ForEach(user.safeMeals){ meal in
+                    MealItem(meal: meal)
                 }
-                .navigationTitle("Meals")
-                .navigationBarItems(trailing: NavigationLink(
-                                        destination: MealForm(meal: addMeal()),
-                                        label: {
-                                            Text("\(newMealText)")
-                                        }))
+                .onDelete { (index) in
+                    deleteMeal(offsets: index)
+                }
+                .onDisappear{
+                    PersistenceController.saveContext()
+                }
+            }
+            HStack{
+                Spacer()
+            ZStack{
+                Circle().foregroundColor(.blue).frame(maxWidth: 100, maxHeight: 100)
+                NavigationLink(
+                    destination: MealForm(isNewMeal: true),
+                    label: {
+                        Image(systemName: "plus").font(.largeTitle).foregroundColor(.black)
+                    }).padding()
+            }.padding()
+            }
+        }
+        .navigationTitle("Meals")
     }
     private func deleteMeal(offsets: IndexSet){
         withAnimation{

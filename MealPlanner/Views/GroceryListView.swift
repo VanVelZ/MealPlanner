@@ -22,7 +22,7 @@ struct GroceryListView: View {
         }.onDisappear{
             PersistenceController.saveContext()
         }
-        .navigationTitle("Grocery List")
+        .navigationTitle("Groceries")
     }
 }
 
