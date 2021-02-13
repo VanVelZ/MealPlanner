@@ -80,8 +80,7 @@ extension User {
         if(!isInList){
             let groceryItem = GroceryItem(context: PersistenceController.shared.container.viewContext)
             ingredient.addToGroceryItems(groceryItem)
-            groceryItem.availability = Int64(Availibility.out.rawValue)
-            groceryItem.addToInLists(groceryList)
+            groceryItem.addToGroceryLists(groceryList)
         }
     }
     private func redoGrocery(at interval: Double){

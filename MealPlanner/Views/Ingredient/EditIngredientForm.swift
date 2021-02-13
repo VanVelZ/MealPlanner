@@ -20,9 +20,9 @@ struct EditIngredientForm: View{
     
     var body: some View{
             HStack{
-                if ingredient.forRecipe == nil {
+                if ingredient.recipe == nil {
                     Button(action: {
-                        ingredient.forRecipe = recipe
+                        ingredient.recipe = recipe
                     }, label: {
                         NewIngredientView()
                     })

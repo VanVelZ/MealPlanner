@@ -13,14 +13,14 @@ struct NewItem<Content: View>: View {
     var itemName: String
     
     var body: some View {
-            HStack{
-                NavigationLink(
-                    destination: destination,
-                    label: {
-                        Image(systemName: "plus.circle")
-                    })
-                Text("New \(itemName)")
-            }
+        NavigationLink(
+            destination: destination,
+            label: {
+                HStack{
+                    Image(systemName: "plus.circle")
+                    Text("New \(itemName)")
+                }
+                })
             .shadow(color: .gray, radius: 2)
             .font(.title)
             .padding()
