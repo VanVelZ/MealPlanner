@@ -12,27 +12,30 @@ struct MainNavigation: View {
     @FetchRequest(sortDescriptors: []) private var users: FetchedResults<User>
     
     var body: some View {
-        NavigationView{
-            List {
-                NavigationLink(
-                    destination: MealList(),
-                    label: {
-                        Text("Meals")
-                    })
-                NavigationLink(
-                    destination: GroceryListView(),
-                    label: {
-                        Text("Groceries")
-                    })
-                NavigationLink("Recipes", destination: RecipeList())
+        TabView {
+            NavigationView {
+                MealList()
             }
-            .navigationTitle("ProFoods")
-            .navigationBarItems(trailing: NavigationLink(
-                                    destination: SettingsView(),
-                                    label: {
-                                        Text("Settings")
-                                    }))
+            .tabItem {
+                Image(systemName: "1.circle")
+                Text("Meals")
+            }
+            NavigationView {
+                RecipeList()
+            }
+            .tabItem {
+                Image(systemName: "2.circle")
+                Text("Recipes")
+            }
+            NavigationView {
+                GroceryListView()
+            }
+            .tabItem {
+                Image(systemName: "3.circle")
+                Text("Groceries")
+            }
         }
+        .edgesIgnoringSafeArea(.top)
         .environmentObject(users[0])
     }
 }

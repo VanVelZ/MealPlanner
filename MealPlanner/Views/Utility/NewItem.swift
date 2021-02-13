@@ -10,25 +10,20 @@ import SwiftUI
 struct NewItem<Content: View>: View {
     
     var destination: Content
-    var itemName: String
     
     var body: some View {
         NavigationLink(
             destination: destination,
             label: {
-                HStack{
+                HStack {
                     Image(systemName: "plus.circle")
-                    Text("New \(itemName)")
                 }
                 })
-            .shadow(color: .gray, radius: 2)
-            .font(.title)
-            .padding()
     }
 }
 
 struct NewItem_Previews: PreviewProvider {
     static var previews: some View {
-        NewItem(destination: MealForm(isNewMeal: true), itemName: "Meal")
+        NewItem(destination: MealForm(isNewMeal: true))
     }
 }

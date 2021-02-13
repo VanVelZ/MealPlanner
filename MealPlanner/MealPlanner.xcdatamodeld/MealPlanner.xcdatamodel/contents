@@ -28,6 +28,7 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="pantry" inverseEntity="User"/>
     </entity>
     <entity name="Recipe" representedClassName="Recipe" syncable="YES" codeGenerationType="class">
+        <attribute name="instructions" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="recipe" inverseEntity="Ingredient"/>
         <relationship name="meals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Meal" inverseName="recipes" inverseEntity="Meal"/>
@@ -46,7 +47,7 @@
         <element name="Ingredient" positionX="-509.044189453125" positionY="-195.2755889892578" width="128" height="118"/>
         <element name="Meal" positionX="32.36700439453131" positionY="248.0910034179686" width="128" height="103"/>
         <element name="Pantry" positionX="108.9541015625" positionY="-260.2954406738281" width="128" height="73"/>
-        <element name="Recipe" positionX="-609.54833984375" positionY="218.3893432617188" width="128" height="103"/>
+        <element name="Recipe" positionX="-844.660400390625" positionY="197.4052124023438" width="128" height="118"/>
         <element name="User" positionX="-244.2601318359374" positionY="17.79669189453125" width="128" height="118"/>
     </elements>
 </model>

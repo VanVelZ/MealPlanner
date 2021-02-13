@@ -14,7 +14,6 @@ struct MealList: View {
     
     
     var body: some View {
-        VStack{
             List {
                 ForEach(user.safeMeals){ meal in
                     MealItem(meal: meal)
@@ -26,12 +25,7 @@ struct MealList: View {
                     PersistenceController.saveContext()
                 }
             }
-            HStack{
-                NewItem(destination: MealForm(isNewMeal: true), itemName: "Meal")
-                Spacer()
-            }
-        }
-        .navigationTitle("Meals")
+        .navigationTitle(Text("Meals"))
     }
     private func deleteMeal(offsets: IndexSet){
         withAnimation{

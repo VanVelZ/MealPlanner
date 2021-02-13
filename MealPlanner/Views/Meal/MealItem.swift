@@ -11,8 +11,10 @@ struct MealItem: View {
     @ObservedObject var meal: Meal
     
     var body: some View {
-        HStack {
-            NavigationLink("\(meal.name ?? "Untitled") on \(meal.unwrappedDate.dayOfTheWeek)", destination: MealForm(meal: meal))
-        }
+        NavigationLink(
+            destination: MealForm(meal: meal),
+            label: {
+                Text("\(meal.name ?? "Untitled") on \(meal.unwrappedDate.dayOfTheWeek)")
+            })
     }
 }

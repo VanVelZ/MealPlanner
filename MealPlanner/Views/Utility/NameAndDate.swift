@@ -14,7 +14,7 @@ struct NameAndDate: View {
     
     var body: some View {
         HStack {
-            TextField("name", text: $name)
+            TextField("Name", text: $name)
                 .font(.headline)
             DatePicker("", selection: $date, in: Date()..., displayedComponents: .date)
         }

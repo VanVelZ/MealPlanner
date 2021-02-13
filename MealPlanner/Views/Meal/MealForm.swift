@@ -15,7 +15,7 @@ struct MealForm: View {
     
     private var isNewMeal:Bool = false
     
-    init(isNewMeal: Bool){
+    init(isNewMeal: Bool = true){
         print("is making a meal")
         self.isNewMeal = isNewMeal
         meal = Meal(context: PersistenceController.shared.container.viewContext)

@@ -23,7 +23,6 @@ struct RecipeList: View {
     
     
     var body: some View {
-        VStack{
             List {
                 ForEach(user.safeRecipes){ recipe in
                     if meal != nil {
@@ -38,11 +37,6 @@ struct RecipeList: View {
             }.onDisappear{
                 PersistenceController.saveContext()
             }
-            HStack{
-                NewItem(destination: EditRecipeForm(), itemName: "Recipe")
-                Spacer()
-            }
-        }
         .navigationTitle("Recipes")
     }
     private func deleteRecipe(offsets: IndexSet){
