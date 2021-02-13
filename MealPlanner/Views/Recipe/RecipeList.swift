@@ -10,7 +10,7 @@ import SwiftUI
 struct RecipeList: View {
     @Environment(\.managedObjectContext) private var viewContext
     
-    @FetchRequest(sortDescriptors: []) private var recipes: FetchedResults<Recipe>
+    @EnvironmentObject var user: User
     
     var meal: Meal?
     
@@ -23,36 +23,31 @@ struct RecipeList: View {
     
     
     var body: some View {
+        VStack{
             List {
-                    ForEach(recipes){ recipe in
-                        if meal != nil {
-                            RecipeItem(recipe: recipe, meal: meal)
-                        } else {
-                            RecipeItem(recipe: recipe)
-                        }
+                ForEach(user.safeRecipes){ recipe in
+                    if meal != nil {
+                        RecipeItem(recipe: recipe, meal: meal)
+                    } else {
+                        RecipeItem(recipe: recipe)
                     }
-                    .onDelete { (index) in
-                        deleteRecipe(offsets: index)
-                    }
-                }.onDisappear{
-                    PersistenceController.saveContext()
                 }
-                .navigationTitle("Recipes")
-                .navigationBarItems(trailing: Button(action: {
-                    addRecipe()
-                }, label: {
-                    Text(newRecipeText)
-            }))
+                .onDelete { (index) in
+                    deleteRecipe(offsets: index)
+                }
+            }.onDisappear{
+                PersistenceController.saveContext()
+            }
+            HStack{
+                NewItem(destination: EditRecipeForm(), itemName: "Recipe")
+                Spacer()
+            }
+        }
+        .navigationTitle("Recipes")
     }
     private func deleteRecipe(offsets: IndexSet){
         withAnimation{
-            offsets.map{recipes[$0]}.forEach(viewContext.delete)
-        }
-    }
-    private func addRecipe(){
-        withAnimation{
-            let newRecipe = Recipe(context: viewContext)
-            newRecipe.name = newRecipeText
+            offsets.map{user.safeRecipes[$0]}.forEach(viewContext.delete)
         }
     }
     private var newRecipeText = "New Recipe"

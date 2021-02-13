@@ -27,16 +27,7 @@ struct MealList: View {
                 }
             }
             HStack{
-                HStack{
-                    NavigationLink(
-                        destination: MealForm(isNewMeal: true),
-                        label: {
-                            Image(systemName: "plus.circle")
-                        })
-                    Text("New Meal")
-                }
-                .font(.title)
-                .padding()
+                NewItem(destination: MealForm(isNewMeal: true), itemName: "Meal")
                 Spacer()
             }
         }

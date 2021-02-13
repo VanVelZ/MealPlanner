@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		370161F925CB0E27002FF3DA /* UnitType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370161F825CB0E27002FF3DA /* UnitType.swift */; };
+		3723A18725D80EA200125DF3 /* NewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3723A18625D80EA200125DF3 /* NewItem.swift */; };
 		3739C3A725C8535F00B258F8 /* MealPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3739C3A625C8535F00B258F8 /* MealPlannerApp.swift */; };
 		3739C3AB25C8536000B258F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3739C3AA25C8536000B258F8 /* Assets.xcassets */; };
 		3739C3AE25C8536000B258F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3739C3AD25C8536000B258F8 /* Preview Assets.xcassets */; };
@@ -131,6 +132,7 @@
 
 /* Begin PBXFileReference section */
 		370161F825CB0E27002FF3DA /* UnitType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitType.swift; sourceTree = "<group>"; };
+		3723A18625D80EA200125DF3 /* NewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItem.swift; sourceTree = "<group>"; };
 		3739C3A325C8535F00B258F8 /* MealPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3739C3A625C8535F00B258F8 /* MealPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlannerApp.swift; sourceTree = "<group>"; };
 		3739C3AA25C8536000B258F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				37C39F4725CB5E8D0033A1ED /* UnitPicker.swift */,
 				37ECAD3925D4325300EABEE4 /* NameAndDate.swift */,
 				3774E8A625D59329008D51A9 /* MainNavigation.swift */,
+				3723A18625D80EA200125DF3 /* NewItem.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37ECAD4C25D4363900EABEE4 /* User.swift in Sources */,
+				3723A18725D80EA200125DF3 /* NewItem.swift in Sources */,
 				3739C3B825C8538200B258F8 /* MealPlanner.xcdatamodeld in Sources */,
 				3739C3BB25C8544400B258F8 /* Persistence.swift in Sources */,
 				37A7B58A25CD89F4006D956B /* MealPlannerWidget.intentdefinition in Sources */,

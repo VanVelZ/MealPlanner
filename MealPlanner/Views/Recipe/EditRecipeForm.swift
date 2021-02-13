@@ -10,9 +10,12 @@ import SwiftUI
 struct EditRecipeForm: View{
     @ObservedObject var recipe: Recipe
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var user: User
+    private var isAdding: Bool = false
     
     init(){
-        recipe = Recipe()
+        isAdding = true
+        recipe = Recipe(context: PersistenceController.shared.container.viewContext)
     }
     init(recipe: Recipe){
         self.recipe = recipe
@@ -22,8 +25,22 @@ struct EditRecipeForm: View{
             recipe.removeFromIngredients(ingredient)
         }
     }
+    private func addRecipe(){
+        withAnimation{
+            recipe.user = user
+            print("addded to user")
+        }
+    }
+    private func onClose(){
+        if isAdding{ addRecipe()}
+        if recipe.name != nil {
+            PersistenceController.saveContext()
+        }
+        else{
+            viewContext.delete(recipe)
+        }
+    }
     var body: some View{
-        NavigationView{
         Form{
             Section{
                 TextField("Recipe Name", text: $recipe.unwrappedName).onAppear{
@@ -31,19 +48,13 @@ struct EditRecipeForm: View{
                         recipe.name = ""
                     }
                 }
-                .onDisappear{
-                    if recipe.name == "" {
-                        recipe.name = "New Recipe"
-                    }
-                    PersistenceController.saveContext()
-                }
             }
             Section(header: Text("Ingredients").font(.subheadline)){
                 IngredientListView(ingredients: $recipe.safeIngredients)
             }
+            .onDisappear{ onClose()}
             .environmentObject(recipe)
         }
-    }
     }
 }
 

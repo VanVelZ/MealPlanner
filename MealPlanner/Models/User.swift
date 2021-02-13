@@ -41,6 +41,18 @@ extension User {
             groceryLists =  NSSet(array: newValue)
         }
     }
+    var safeRecipes: [Recipe] {
+        get{
+        var recipeArray: [Recipe] = []
+        for recipe in recipes! {
+            recipeArray.append(recipe as! Recipe)
+        }
+        return recipeArray
+    }
+        set{
+            recipes =  NSSet(array: newValue)
+        }
+    }
     
     func redoGroceryList(){
         safeGroceryList  = []

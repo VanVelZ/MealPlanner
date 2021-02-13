@@ -10,7 +10,7 @@ import Foundation
 extension Recipe{
     var unwrappedName: String {
         get{
-            self.name!
+            self.name ?? ""
         }
         set{
             name = newValue
