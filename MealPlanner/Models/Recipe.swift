@@ -8,14 +8,10 @@
 import Foundation
 
 extension Recipe{
-    var unwrappedName: String {
-        get{
-            self.name ?? ""
-        }
-        set{
-            name = newValue
-        }
-    }
+    var unwrappedName: String { get{ self.name ?? ""} set{ name = newValue} }
+    var unwrappedDateAdded: Date { get{ dateAdded ?? Date()} set { dateAdded = newValue}}
+    var unwrappedInstructions: String { get{ instructions ?? ""} set { instructions = newValue}}
+    
     var safeIngredients: [Ingredient] {
         get{
         var ingredientArray: [Ingredient] = []
@@ -24,9 +20,7 @@ extension Recipe{
         }
         return ingredientArray
     }
-        set{
-            ingredients =  NSSet(array: newValue)
-        }
+        set{ ingredients =  NSSet(array: newValue)}
     }
 }
 

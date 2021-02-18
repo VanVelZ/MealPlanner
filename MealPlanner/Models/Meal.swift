@@ -9,22 +9,8 @@ import Foundation
 
 extension Meal{
     
-    var unwrappedName: String {
-        get{
-            name ?? ""
-        }
-        set {
-            name = newValue
-        }
-    }
-    var unwrappedDate: Date {
-        get{
-            plannedForDate ?? Date()
-        }
-        set {
-            plannedForDate = newValue
-        }
-    }
+    var unwrappedName: String { get {name ?? ""} set { name = newValue}}
+    var unwrappedDate: Date { get{ plannedForDate ?? Date()} set { plannedForDate = newValue }}
     var safeRecipes: [Recipe] {
         get{
         var recipeArray: [Recipe] = []

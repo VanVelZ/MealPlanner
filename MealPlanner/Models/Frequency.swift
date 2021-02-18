@@ -8,9 +8,9 @@
 import Foundation
 
 enum Frequency: Int, Codable, Hashable{
-    case daily
-    case twiceAWeek
-    case weekly
-    case biweekly
-    case monthly
+    case daily = 1
+    case twiceAWeek = 3
+    case weekly = 7
+    case biweekly = 14
+    case monthly = 30
 }

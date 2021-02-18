@@ -43,7 +43,7 @@ struct MealForm: View {
         if isNewMeal {addMeal()}
         if(meal.name != nil){
             PersistenceController.saveContext()
-            user.redoGroceryList()
+            user.redoGrocery()
         }
         else{viewContext.delete(meal)}
     }

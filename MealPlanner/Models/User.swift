@@ -9,12 +9,16 @@ import Foundation
 
 extension User {
     var frequencyEnum: Frequency{
-        get{
-            Frequency(rawValue: Int(groceryFrequency )) ?? .daily
-        }
+        get{ Frequency(rawValue: Int(groceryFrequency )) ?? .daily }
         set{
             groceryFrequency =  Int64(newValue.rawValue)
-            redoGroceryList()
+            redoGrocery()
+        }
+    }
+    var unwrappedPantry: Pantry {
+        get{ self.pantry ?? Pantry(context: PersistenceController.shared.container.viewContext) }
+        set{
+            pantry = newValue
         }
     }
     var safeGroceryList: [GroceryList] {
@@ -54,22 +58,6 @@ extension User {
         }
     }
     
-    func redoGroceryList(){
-        safeGroceryList  = []
-        switch self.frequencyEnum {
-        case .daily:
-            redoGrocery(at: 1)
-        case .twiceAWeek:
-            redoGrocery(at: 3.5)
-        case .weekly:
-            redoGrocery(at: 7)
-        case .biweekly:
-            redoGrocery(at: 14)
-        case .monthly:
-            redoGrocery(at: 30.5)
-        }
-        PersistenceController.saveContext()
-    }
     private func addIngredientToGroceryList(groceryList: GroceryList, ingredient: Ingredient){
         var isInList: Bool = false
         groceryList.safeGroceryItems.forEach { (item) in
@@ -83,9 +71,9 @@ extension User {
             groceryItem.addToGroceryLists(groceryList)
         }
     }
-    private func redoGrocery(at interval: Double){
+    func redoGrocery(){
         var groceryShopDate = Date()
-        let untilNextShop: TimeInterval = 60 * 60 * 24 * interval
+        let untilNextShop: TimeInterval = TimeInterval(60 * 60 * 24 * self.frequencyEnum.rawValue)
         var groceryList: GroceryList
         groceryList = GroceryList(context: PersistenceController.shared.container.viewContext)
         groceryList.plannedForDate = groceryShopDate
@@ -110,5 +98,6 @@ extension User {
                 }
             }
         }
+        PersistenceController.saveContext()
     }
 }

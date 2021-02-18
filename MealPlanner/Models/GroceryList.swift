@@ -9,14 +9,7 @@ import Foundation
 
 extension GroceryList {
     
-    var unwrappedDate: Date {
-        get{
-            plannedForDate ?? Date()
-        }
-        set {
-            plannedForDate = newValue
-        }
-    }
+    var unwrappedDate: Date { get{ plannedForDate ?? Date()} set { plannedForDate = newValue}}
     
     var safeGroceryItems: [GroceryItem] {
         get{
@@ -26,8 +19,6 @@ extension GroceryList {
         }
         return groceryItemsArray
     }
-        set{
-            groceryItems =  NSSet(array: newValue)
-        }
+        set{ groceryItems =  NSSet(array: newValue)}
     }
 }
