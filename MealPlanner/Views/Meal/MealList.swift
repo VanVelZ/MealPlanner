@@ -15,6 +15,7 @@ struct MealList: View {
     
     var body: some View {
             List {
+                Section(header: NewItem(destination: MealForm())){
                 ForEach(user.safeMeals){ meal in
                     MealItem(meal: meal)
                 }
@@ -23,6 +24,7 @@ struct MealList: View {
                 }
                 .onDisappear{
                     PersistenceController.saveContext()
+                }
                 }
             }
         .navigationTitle(Text("Meals"))

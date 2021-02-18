@@ -13,8 +13,10 @@ struct GroceryView: View {
     
     var body: some View {
             List{
+                Section(header: Text("Add grocery item")){
                 ForEach(groceries.safeGroceryItems) { item in
                     GroceryItemView(groceryItem: item)
+                }
                 }
             }
     }

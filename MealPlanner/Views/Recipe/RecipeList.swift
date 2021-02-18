@@ -24,15 +24,17 @@ struct RecipeList: View {
     
     var body: some View {
             List {
-                ForEach(user.safeRecipes){ recipe in
-                    if meal != nil {
-                        RecipeItem(recipe: recipe, meal: meal)
-                    } else {
-                        RecipeItem(recipe: recipe)
+                Section(header: NewItem(destination: EditRecipeForm())) {
+                    ForEach(user.safeRecipes){ recipe in
+                        if meal != nil {
+                            RecipeItem(recipe: recipe, meal: meal)
+                        } else {
+                            RecipeItem(recipe: recipe)
+                        }
                     }
+                    .onDelete { (index) in
+                        deleteRecipe(offsets: index)
                 }
-                .onDelete { (index) in
-                    deleteRecipe(offsets: index)
                 }
             }.onDisappear{
                 PersistenceController.saveContext()

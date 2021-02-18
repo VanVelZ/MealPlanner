@@ -16,7 +16,9 @@ struct NewItem<Content: View>: View {
             destination: destination,
             label: {
                 HStack {
-                    Image(systemName: "plus.circle")
+                    Spacer()
+                    Image(systemName: "plus").padding().shadow(color: .primary, radius: 8, x: 0.5, y: 0.8)
+                    Spacer()
                 }
                 })
     }
